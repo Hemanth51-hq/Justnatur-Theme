@@ -1,0 +1,95 @@
+<section class="section">
+  <div class="page-width">
+    <div class="reveal" style="max-width:42rem;">
+      <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 class="display">{{ section.settings.heading }}</h2>
+      {%- if section.settings.text != blank -%}
+        <p class="lede">{{ section.settings.text }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="ingredient-grid">
+      {%- for block in section.blocks -%}
+        <article class="ingredient reveal" {{ block.shopify_attributes }} style="transition-delay: {{ forloop.index0 | times: 0.05 }}s;">
+          <div class="ingredient__media">
+            {%- if block.settings.image != blank -%}
+              {{ block.settings.image | image_url: width: 160 | image_tag: loading: 'lazy', alt: block.settings.title }}
+            {%- else -%}
+              {{ block.settings.title | slice: 0 }}
+            {%- endif -%}
+          </div>
+          <div>
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.text }}</p>
+          </div>
+        </article>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.chips != blank -%}
+      <div class="chip-row reveal">
+        {%- assign chips = section.settings.chips | split: '|' -%}
+        {%- for chip in chips -%}
+          <span class="chip">{{ chip | strip }}</span>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ingredients",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Key ingredients"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Each seed, herb, and leaf strengthens hair from root to tip"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "DeepRoot Hair Strength Mix is carefully chosen to nourish the follicle — naturally, with no preservatives or artificial sugars."
+    },
+    {
+      "type": "text",
+      "id": "chips",
+      "label": "Trust chips",
+      "default": "Globally sourced | Clinically proven ingredients | Hypoallergenic | 100% pesticide free | No artificial sugars | 100% vegan",
+      "info": "Separate with |"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingredient",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Amla" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Vitamin C–rich fruit traditionally used to support scalp vitality and hair strength." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ingredients",
+      "blocks": [
+        { "type": "ingredient", "settings": { "title": "Amla", "text": "Nature’s vitamin C — supports follicle vitality and antioxidant defense." } },
+        { "type": "ingredient", "settings": { "title": "Flaxseed", "text": "Omega-rich seed that helps nourish hair from the inside out." } },
+        { "type": "ingredient", "settings": { "title": "Cumin", "text": "Food-grade spice traditionally used to support digestion and nutrient uptake." } },
+        { "type": "ingredient", "settings": { "title": "Beetroot", "text": "Adds natural sweetness and iron-supportive plant nutrition." } },
+        { "type": "ingredient", "settings": { "title": "Clove", "text": "Warm botanical note in a balanced, daily-drinkable blend." } },
+        { "type": "ingredient", "settings": { "title": "14-herb blend", "text": "A full DeepRoot formula built for long-term root strength — not a one-note gummy." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

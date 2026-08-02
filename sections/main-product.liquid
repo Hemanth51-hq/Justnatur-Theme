@@ -75,6 +75,10 @@
         </span>
       </div>
 
+      {%- if section.settings.urgency_text != blank -%}
+        <div class="urgency-bar">{{ section.settings.urgency_text }}</div>
+      {%- endif -%}
+
       {%- form 'product', product, data-product-form: true, id: 'ProductForm' -%}
         <input type="hidden" name="id" value="{{ current_variant.id }}" data-variant-id>
 
@@ -286,6 +290,12 @@
       "label": "Promise chips",
       "default": "5× Less Hair Fall | 3× Stronger Roots | 2× Visible Regrowth | Clinically Proven",
       "info": "Separate with |"
+    },
+    {
+      "type": "text",
+      "id": "urgency_text",
+      "label": "Urgency bar",
+      "default": "Get free Kesha Amrith Hair Oil on prepaid orders · 90-day money-back guarantee"
     },
     {
       "type": "text",

@@ -12,7 +12,7 @@ Editorial wellness theme for **JustNatur**, inspired by the Himalibuti product-p
 ## What’s included
 
 - **Homepage** — full-bleed brand hero, trust marquee, promise, story, featured products, benefits, newsletter
-- **Product page** — gallery, pack picker (1 / 2 / 3), combo slots, trust grid, sticky ATC, story/benefits/audience/ritual/reviews
+- **Product page (CVR funnel)** — gallery, pack picker, urgency bar, problem/causes, before/after reviews, brand comparison, ingredients, timeline, how-to-use, guarantee, FAQ, reviews, final CTA
 - **Collection, cart, search, 404, pages, collections list**
 - **Cart drawer** with AJAX add-to-cart
 - Theme editor settings for colors, logo, and section content

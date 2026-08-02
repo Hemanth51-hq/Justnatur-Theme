@@ -1,0 +1,163 @@
+<section class="section">
+  <div class="page-width">
+    <div class="reviews-header reveal">
+      <div>
+        <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+        <h2 class="display" style="font-size:clamp(1.8rem,3.5vw,2.8rem);">{{ section.settings.heading }}</h2>
+        {%- if section.settings.text != blank -%}
+          <p class="lede">{{ section.settings.text }}</p>
+        {%- endif -%}
+      </div>
+      <div class="muted">{{ section.settings.subheading }}</div>
+    </div>
+
+    <div class="ba-grid">
+      {%- for block in section.blocks -%}
+        <article class="ba-card reveal" {{ block.shopify_attributes }} style="transition-delay: {{ forloop.index0 | times: 0.08 }}s;">
+          <div class="ba-card__images">
+            <div class="ba-shot">
+              <span class="ba-shot__label">Before</span>
+              {%- liquid
+                assign before_alt = 'Before — ' | append: block.settings.author
+                assign after_alt = block.settings.after_label | default: 'After' | append: ' — ' | append: block.settings.author
+              -%}
+              {%- if block.settings.before_image != blank -%}
+                {{
+                  block.settings.before_image
+                  | image_url: width: 700
+                  | image_tag: loading: 'lazy', widths: '320,480,700', sizes: '(min-width: 980px) 16vw, 45vw', alt: before_alt
+                }}
+              {%- else -%}
+                <div class="ba-shot__placeholder">Before<br>{{ block.settings.timeline | default: 'Day 0' }}</div>
+              {%- endif -%}
+            </div>
+            <div class="ba-shot ba-shot--after">
+              <span class="ba-shot__label">{{ block.settings.after_label | default: 'After' }}</span>
+              {%- if block.settings.after_image != blank -%}
+                {{
+                  block.settings.after_image
+                  | image_url: width: 700
+                  | image_tag: loading: 'lazy', widths: '320,480,700', sizes: '(min-width: 980px) 16vw, 45vw', alt: after_alt
+                }}
+              {%- else -%}
+                <div class="ba-shot__placeholder">{{ block.settings.after_label | default: 'After' }}<br>{{ block.settings.timeline }}</div>
+              {%- endif -%}
+            </div>
+          </div>
+
+          <div class="ba-card__body">
+            <div class="ba-card__meta">
+              <span class="stars" aria-hidden="true">★★★★★</span>
+              <span>{{ block.settings.timeline }}</span>
+            </div>
+            <h3 class="ba-card__title">{{ block.settings.title }}</h3>
+            <p class="ba-card__quote">“{{ block.settings.quote }}”</p>
+            {%- if block.settings.results != blank -%}
+              <div class="ba-card__results">
+                {%- assign results = block.settings.results | split: '|' -%}
+                {%- for result in results -%}
+                  <span class="chip">{{ result | strip }}</span>
+                {%- endfor -%}
+              </div>
+            {%- endif -%}
+            <div class="review__author">
+              {{ block.settings.author }}
+              {%- if block.settings.verified -%}
+                <span class="badge" style="margin-left:0.45rem;">Verified</span>
+              {%- endif -%}
+            </div>
+          </div>
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Before & after reviews",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Real transformations"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "We don’t coat your hair. We rebuild it — strand by strand."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Thousands of people are rebuilding their roots with Kesha Mula every day."
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Before → after results from consistent use"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Before/after review",
+      "settings": [
+        { "type": "image_picker", "id": "before_image", "label": "Before image" },
+        { "type": "image_picker", "id": "after_image", "label": "After image" },
+        { "type": "text", "id": "after_label", "label": "After label", "default": "After 8 Weeks" },
+        { "type": "text", "id": "timeline", "label": "Timeline", "default": "8 weeks" },
+        { "type": "text", "id": "title", "label": "Title", "default": "I could see less hair fall while washing" },
+        { "type": "textarea", "id": "quote", "label": "Quote", "default": "After using Kesha Mula consistently for 3–4 weeks, the hair fall reduced a lot. It didn’t happen overnight, but I could clearly see the difference." },
+        { "type": "text", "id": "results", "label": "Result chips", "default": "Less hair on pillow | Stronger feel | Reordered", "info": "Separate with |" },
+        { "type": "text", "id": "author", "label": "Author", "default": "Anusha R." },
+        { "type": "checkbox", "id": "verified", "label": "Verified customer", "default": true }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Before & after reviews",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "after_label": "After 8 Weeks",
+            "timeline": "8 weeks",
+            "title": "I could see less hair fall while washing",
+            "quote": "I was losing a lot of hair while combing and washing. After using Kesha Mula consistently for 3–4 weeks, the hair fall reduced a lot. Now I’ve reordered for the next 2 months.",
+            "results": "Hair fall reduced during wash | Scalp feels healthier | Hair feels stronger",
+            "author": "Anusha R."
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "after_label": "After 8 Weeks",
+            "timeline": "8 weeks",
+            "title": "Post-stress hair fall started settling",
+            "quote": "After delivery, my hair fall increased a lot due to stress and weakness. Kesha Mula felt gentle and natural. My hair fall has reduced slowly and my energy levels feel better too.",
+            "results": "Stress-related fall improved | Better digestion | No side effects",
+            "author": "Swathi M."
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "after_label": "After 12 Weeks",
+            "timeline": "12 weeks",
+            "title": "My hair looks less thin than before",
+            "quote": "My hair was becoming very thin, especially near the front. After three months, my hair feels thicker and more manageable. I’m continuing for 90 days more.",
+            "results": "Less thinning at the crown | Hair feels thicker | Easy daily routine",
+            "author": "Kavitha S."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

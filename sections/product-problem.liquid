@@ -1,0 +1,80 @@
+<section class="section section--soft">
+  <div class="page-width">
+    <div class="reveal" style="max-width:44rem;">
+      <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 class="display">{{ section.settings.heading }}</h2>
+      {%- if section.settings.text != blank -%}
+        <div class="lede rte">{{ section.settings.text }}</div>
+      {%- endif -%}
+      {%- if section.settings.punchline != blank -%}
+        <p style="font-family:var(--font-display);font-size:clamp(1.3rem,2.5vw,1.8rem);margin-top:1.25rem;">
+          {{ section.settings.punchline }}
+        </p>
+      {%- endif -%}
+    </div>
+
+    <div class="cause-grid">
+      {%- for block in section.blocks -%}
+        <article class="cause-item reveal" {{ block.shopify_attributes }} style="transition-delay: {{ forloop.index0 | times: 0.05 }}s;">
+          <strong>{{ block.settings.title }}</strong>
+          <p>{{ block.settings.text }}</p>
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Problem / causes",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The real problem"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "3 out of 4 women face visible hair thinning — and it’s not your shampoo’s fault"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Shampoos and oils care for the hair shaft, but they can’t fix what’s happening inside the body. Hair fall usually starts internally — triggered by stress, poor nutrition, and lifestyle imbalance.</p><p>Real hair recovery begins within. When the body gets the right nutrients, hair follicles grow stronger, the hair cycle stabilizes, and healthy growth follows naturally.</p>"
+    },
+    {
+      "type": "text",
+      "id": "punchline",
+      "label": "Punchline",
+      "default": "Hair fall doesn’t start on the scalp. It starts inside."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "cause",
+      "name": "Cause",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Chronic stress" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Stress pushes the follicle into a shedding phase faster than it can recover." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Problem / causes",
+      "blocks": [
+        { "type": "cause", "settings": { "title": "Chronic stress", "text": "Stress pushes follicles into a shedding phase faster than they can recover." } },
+        { "type": "cause", "settings": { "title": "Nutritional gaps", "text": "Missing key botanicals and nutrients weakens the root from within." } },
+        { "type": "cause", "settings": { "title": "Hormone changes", "text": "Postpartum, PCOS, and cycle shifts often show up first in the parting." } },
+        { "type": "cause", "settings": { "title": "Poor sleep", "text": "Recovery happens at night — irregular sleep disrupts the hair cycle." } },
+        { "type": "cause", "settings": { "title": "Medication effects", "text": "Some medicines and crash diets leave hair thinner and more brittle." } },
+        { "type": "cause", "settings": { "title": "Topical-only care", "text": "Oils and serums coat the shaft — they can’t rebuild the root alone." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

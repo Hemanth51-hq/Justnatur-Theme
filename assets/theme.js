@@ -241,6 +241,25 @@
     }
   }
 
+  /* FAQ accordion */
+  qsa('[data-faq]').forEach((list) => {
+    qsa('[data-faq-toggle]', list).forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const open = item.classList.contains('is-open');
+        qsa('.faq-item', list).forEach((el) => {
+          el.classList.remove('is-open');
+          const t = qs('[data-faq-toggle]', el);
+          if (t) t.setAttribute('aria-expanded', 'false');
+        });
+        if (!open) {
+          item.classList.add('is-open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  });
+
   /* Init cart count */
   fetch('/cart.js')
     .then((r) => r.json())

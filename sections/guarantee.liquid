@@ -1,0 +1,64 @@
+<section class="section section--tight">
+  <div class="page-width">
+    <div class="guarantee reveal">
+      <div class="guarantee__badge">{{ section.settings.badge_text }}</div>
+      <div>
+        <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+        <h2 class="display" style="font-size:clamp(1.7rem,3.2vw,2.5rem);">{{ section.settings.heading }}</h2>
+        {%- if section.settings.text != blank -%}
+          <p class="lede" style="max-width:38rem;">{{ section.settings.text }}</p>
+        {%- endif -%}
+        <div class="proof-strip" style="margin-top:1rem;">
+          {%- assign pills = section.settings.pills | split: '|' -%}
+          {%- for pill in pills -%}
+            <span class="chip">{{ pill | strip }}</span>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Guarantee",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "90-Day Money Back"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Risk-free"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Try Kesha Mula risk-free for 90 days"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "If you’re not seeing a meaningful reduction in hair fall with consistent use, reach out — we’ll make it right. Clean formula. Free express shipping. No empty promises."
+    },
+    {
+      "type": "text",
+      "id": "pills",
+      "label": "Pills",
+      "default": "Free express shipping | 100% clean & natural | Clinically proven ingredients | Heavy metal tested",
+      "info": "Separate with |"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Guarantee"
+    }
+  ]
+}
+{% endschema %}
