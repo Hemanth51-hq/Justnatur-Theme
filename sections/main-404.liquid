@@ -1,11 +1,27 @@
 <section class="section">
   <div class="page-width page-width--narrow text-center">
     <p class="eyebrow">404</p>
-    <h1 class="display">{{ '404.title' | t }}</h1>
+    <h1 class="display" style="max-width:none;margin-inline:auto;">{{ '404.title' | t }}</h1>
     <p class="lede mx-auto">{{ '404.subtext' | t }}</p>
-    <a class="btn btn--primary" href="{{ routes.all_products_collection_url }}">{{ '404.link' | t }}</a>
+    <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;margin-top:1.25rem;">
+      <a class="btn btn--primary" href="{{ routes.all_products_collection_url }}">{{ '404.link' | t }}</a>
+      <a class="btn btn--ghost" href="{{ routes.root_url }}">Go home</a>
+    </div>
   </div>
 </section>
+
+{%- if collections.all.products.size > 0 -%}
+  <section class="section section--tight">
+    <div class="page-width">
+      <h2 class="display" style="font-size:clamp(1.5rem,4vw,2.2rem);max-width:none;text-align:center;margin-inline:auto;">Shop JustNatur</h2>
+      <div class="product-grid" style="margin-top:1.5rem;">
+        {%- for product in collections.all.products limit: 3 -%}
+          {% render 'product-card', product: product %}
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+{%- endif -%}
 
 {% schema %}
 {
