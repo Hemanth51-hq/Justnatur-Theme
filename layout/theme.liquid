@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="theme-color" content="{{ settings.color_accent }}">
     <link rel="canonical" href="{{ canonical_url }}">
 
@@ -23,23 +23,34 @@
     {% endif %}
 
     {% render 'meta-tags' %}
-
     {{ content_for_header }}
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     >
 
-    {{ 'base.css' | asset_url | stylesheet_tag }}
-
+    {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
     <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
 
     <script>
       document.documentElement.classList.remove('no-js');
       document.documentElement.classList.add('js');
+      window.themeSettings = {
+        progress: {
+          enabled: {{ settings.enable_cart_progress | json }},
+          tiers: [
+            { amount: {{ settings.progress_tier_1 | default: 499 | times: 100 }}, label: {{ settings.progress_tier_1_label | json }} },
+            { amount: {{ settings.progress_tier_2 | default: 999 | times: 100 }}, label: {{ settings.progress_tier_2_label | json }} },
+            { amount: {{ settings.progress_tier_3 | default: 1499 | times: 100 }}, label: {{ settings.progress_tier_3_label | json }} }
+          ]
+        },
+        moneyFormat: {{ shop.money_format | json }}
+      };
     </script>
 
     <style>
@@ -48,26 +59,40 @@
         --color-surface: {{ settings.color_surface }};
         --color-text: {{ settings.color_text }};
         --color-muted: {{ settings.color_text_muted }};
+        --color-muted-2: {{ settings.color_muted }};
         --color-accent: {{ settings.color_accent }};
         --color-accent-soft: {{ settings.color_accent_soft }};
         --color-highlight: {{ settings.color_highlight }};
+        --color-secondary: {{ settings.color_secondary }};
         --color-border: {{ settings.color_border }};
-        --font-display: 'Fraunces', Georgia, serif;
-        --font-body: 'Plus Jakarta Sans', sans-serif;
+        --font-display: 'Poppins', sans-serif;
+        --font-body: 'Poppins', sans-serif;
         --type-scale: {{ settings.type_scale | divided_by: 100.0 }};
         --logo-width: {{ settings.logo_width }}px;
-        --radius-sm: 6px;
-        --radius-md: 12px;
+        --space-1: 8px;
+        --space-2: 16px;
+        --space-3: 24px;
+        --space-4: 32px;
+        --space-5: 40px;
+        --space-6: 48px;
+        --space-8: 64px;
+        --radius-sm: 8px;
+        --radius-md: 14px;
         --radius-lg: 20px;
         --radius-pill: 999px;
-        --shadow-soft: 0 18px 50px rgba(26, 28, 25, 0.08);
+        --shadow-soft: 0 16px 40px rgba(26, 26, 26, 0.08);
         --container: 1180px;
-        --header-height: 72px;
+        --header-height: 64px;
+        --safe-bottom: env(safe-area-inset-bottom, 0px);
+      }
+
+      @media (min-width: 900px) {
+        :root { --header-height: 72px; }
       }
     </style>
   </head>
 
-  <body class="template-{{ template.name }}{% if template.suffix %} template-{{ template.name }}-{{ template.suffix }}{% endif %}">
+  <body class="template-{{ template.name }}{% if template.name == 'index' %} template-index{% endif %}">
     <a class="skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
     {% sections 'header-group' %}
@@ -80,6 +105,18 @@
 
     {%- if settings.cart_drawer_enabled -%}
       {% render 'cart-drawer' %}
+    {%- endif -%}
+
+    {%- if settings.social_whatsapp != blank -%}
+      <a
+        class="whatsapp-fab"
+        href="https://wa.me/{{ settings.social_whatsapp }}"
+        target="_blank"
+        rel="noopener"
+        aria-label="WhatsApp"
+      >
+        {% render 'icon', icon: 'whatsapp' %}
+      </a>
     {%- endif -%}
 
     <div class="overlay" data-overlay hidden></div>

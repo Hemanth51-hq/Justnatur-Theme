@@ -8,7 +8,7 @@
           "settings": {
             "icon": "truck",
             "title": "Free express shipping",
-            "text": "Same-day dispatch · Free pan-India delivery · 3–5 business days"
+            "text": "Same-day dispatch \u00b7 Free pan-India delivery \u00b7 3\u20135 business days"
           }
         },
         "trust2": {
@@ -16,7 +16,7 @@
           "settings": {
             "icon": "shield",
             "title": "90-day money-back",
-            "text": "Try risk-free · Protected payments · Prepaid perks"
+            "text": "Try risk-free \u00b7 Protected payments \u00b7 Prepaid perks"
           }
         },
         "trust3": {
@@ -24,7 +24,7 @@
           "settings": {
             "icon": "leaf",
             "title": "100% clean & natural",
-            "text": "No preservatives · Food-grade herbs · Heavy-metal tested"
+            "text": "No preservatives \u00b7 Food-grade herbs \u00b7 Heavy-metal tested"
           }
         },
         "trust4": {
@@ -32,46 +32,101 @@
           "settings": {
             "icon": "star",
             "title": "Trusted by 10,000+",
-            "text": "Clinically proven ingredients · Visible results in weeks"
+            "text": "Clinically proven ingredients \u00b7 Visible results in weeks"
           }
         }
       },
-      "block_order": ["trust1", "trust2", "trust3", "trust4"],
+      "block_order": [
+        "trust1",
+        "trust2",
+        "trust3",
+        "trust4"
+      ],
       "settings": {
         "kicker": "FROM WITHIN | NOT TOPICAL | NO EMPTY CLAIMS",
         "show_rating": true,
-        "rating_text": "4.6/5 · Based on 50+ reviews · Trusted by 10,000+",
-        "promise_text": "Fights hair fall at the root | 5× less fall | Inside + outside care | Clinically proven",
-        "urgency_text": "Get free Kesha Amrith Hair Oil on prepaid · 90-day money-back guarantee",
+        "rating_text": "4.6/5 \u00b7 Based on 50 reviews",
+        "promise_text": "Fights hair fall at the root | Visible results in weeks | 100% natural | Clinically proven",
+        "urgency_text": "Get free Kesha Amrith Hair Oil on prepaid \u00b7 90-day money-back",
         "pack_heading": "Choose your hair transformation pack",
-        "pack_1_title": "Trail Pack · 15 Days",
-        "pack_1_meta": "1 pouch · Start the root ritual",
-        "pack_2_title": "Value Pack · Any 2",
-        "pack_2_meta": "Select your combo · Most people start here",
+        "pack_1_title": "Trail Pack \u00b7 15 Days",
+        "pack_1_meta": "1 pouch \u00b7 Start the root ritual",
+        "pack_2_title": "Value Pack \u00b7 2 units",
+        "pack_2_meta": "Most chosen \u00b7 Better per-day value",
         "pack_2_badge": "Most chosen",
-        "pack_3_title": "Best Deal · Any 3",
-        "pack_3_meta": "Select your combo · Best per-day value",
+        "pack_3_title": "Best Deal \u00b7 3 units",
+        "pack_3_meta": "Best value for 90-day consistency",
         "pack_3_badge": "Best value",
-        "sibling_1": "Kesha Amrith Hair Oil",
-        "sibling_2": "Kesha Combo"
+        "buyers_text": "Trusted by 10,000+ people",
+        "enable_scarcity": false,
+        "enable_recent": true,
+        "recent_text": "Someone in Hyderabad bought Kesha Mula 12 mins ago",
+        "pack_note": "Packs add multiple units of this product. Pair with Kesha Amrith in Frequently Bought Together below.",
+        "cod_text": "COD available",
+        "delivery_text": "3\u20135 day delivery",
+        "returns_text": "90-day ease",
+        "secure_text": "Secure checkout"
       }
     },
     "problem": {
       "type": "product-problem",
       "blocks": {
-        "c1": { "type": "cause", "settings": { "title": "Chronic stress", "text": "Stress pushes follicles into a shedding phase faster than they can recover." } },
-        "c2": { "type": "cause", "settings": { "title": "Nutritional gaps", "text": "Missing key botanicals and nutrients weakens the root from within." } },
-        "c3": { "type": "cause", "settings": { "title": "Hormone changes", "text": "Postpartum, PCOS, and cycle shifts often show up first in the parting." } },
-        "c4": { "type": "cause", "settings": { "title": "Poor sleep", "text": "Recovery happens at night — irregular sleep disrupts the hair cycle." } },
-        "c5": { "type": "cause", "settings": { "title": "Medication effects", "text": "Some medicines and crash diets leave hair thinner and more brittle." } },
-        "c6": { "type": "cause", "settings": { "title": "Topical-only care", "text": "Oils and serums coat the shaft — they can’t rebuild the root alone." } }
+        "c1": {
+          "type": "cause",
+          "settings": {
+            "title": "Chronic stress",
+            "text": "Stress pushes follicles into a shedding phase faster than they can recover."
+          }
+        },
+        "c2": {
+          "type": "cause",
+          "settings": {
+            "title": "Nutritional gaps",
+            "text": "Missing key botanicals and nutrients weakens the root from within."
+          }
+        },
+        "c3": {
+          "type": "cause",
+          "settings": {
+            "title": "Hormone changes",
+            "text": "Postpartum, PCOS, and cycle shifts often show up first in the parting."
+          }
+        },
+        "c4": {
+          "type": "cause",
+          "settings": {
+            "title": "Poor sleep",
+            "text": "Recovery happens at night \u2014 irregular sleep disrupts the hair cycle."
+          }
+        },
+        "c5": {
+          "type": "cause",
+          "settings": {
+            "title": "Medication effects",
+            "text": "Some medicines and crash diets leave hair thinner and more brittle."
+          }
+        },
+        "c6": {
+          "type": "cause",
+          "settings": {
+            "title": "Topical-only care",
+            "text": "Oils and serums coat the shaft \u2014 they can\u2019t rebuild the root alone."
+          }
+        }
       },
-      "block_order": ["c1", "c2", "c3", "c4", "c5", "c6"],
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c6"
+      ],
       "settings": {
         "eyebrow": "The real problem",
-        "heading": "3 out of 4 women face visible hair thinning — and it’s not your shampoo’s fault",
-        "text": "<p>Shampoos and oils care for the hair shaft, but they can’t fix what’s happening inside the body. Hair fall usually starts internally — triggered by stress, poor nutrition, and lifestyle imbalance.</p><p>Real hair recovery begins within. When the body gets the right nutrients, hair follicles grow stronger, the hair cycle stabilizes, and healthy growth follows naturally.</p>",
-        "punchline": "Hair fall doesn’t start on the scalp. It starts inside."
+        "heading": "3 out of 4 women face visible hair thinning \u2014 and it\u2019s not your shampoo\u2019s fault",
+        "text": "<p>Shampoos and oils care for the hair shaft, but they can\u2019t fix what\u2019s happening inside the body. Hair fall usually starts internally \u2014 triggered by stress, poor nutrition, and lifestyle imbalance.</p><p>Real hair recovery begins within. When the body gets the right nutrients, hair follicles grow stronger, the hair cycle stabilizes, and healthy growth follows naturally.</p>",
+        "punchline": "Hair fall doesn\u2019t start on the scalp. It starts inside."
       }
     },
     "before_after": {
@@ -83,7 +138,7 @@
             "after_label": "After 8 Weeks",
             "timeline": "8 weeks",
             "title": "I could see less hair fall while washing",
-            "quote": "I was losing a lot of hair while combing and washing. After using Kesha Mula consistently for 3–4 weeks, the hair fall reduced a lot. Now I’ve reordered for the next 2 months.",
+            "quote": "I was losing a lot of hair while combing and washing. After using Kesha Mula consistently for 3\u20134 weeks, the hair fall reduced a lot. Now I\u2019ve reordered for the next 2 months.",
             "results": "Hair fall reduced during wash | Scalp feels healthier | Hair feels stronger",
             "author": "Anusha R.",
             "verified": true
@@ -107,17 +162,21 @@
             "after_label": "After 12 Weeks",
             "timeline": "12 weeks",
             "title": "My hair looks less thin than before",
-            "quote": "My hair was becoming very thin, especially near the front. After three months, my hair feels thicker and more manageable. I’m continuing for 90 days more.",
+            "quote": "My hair was becoming very thin, especially near the front. After three months, my hair feels thicker and more manageable. I\u2019m continuing for 90 days more.",
             "results": "Less thinning at the crown | Hair feels thicker | Easy daily routine",
             "author": "Kavitha S.",
             "verified": true
           }
         }
       },
-      "block_order": ["ba1", "ba2", "ba3"],
+      "block_order": [
+        "ba1",
+        "ba2",
+        "ba3"
+      ],
       "settings": {
         "eyebrow": "Real transformations",
-        "heading": "We don’t coat your hair. We rebuild it — strand by strand.",
+        "heading": "We don\u2019t coat your hair. We rebuild it \u2014 strand by strand.",
         "text": "Thousands of people are rebuilding their roots with Kesha Mula every day.",
         "subheading": "Upload before/after photos in the theme editor for each review"
       }
@@ -125,36 +184,142 @@
     "story": {
       "type": "product-story",
       "blocks": {
-        "s1": { "type": "stat", "settings": { "value": "14", "label": "Botanicals", "description": "Whole-herb DeepRoot blend" } },
-        "s2": { "type": "stat", "settings": { "value": "1 scoop", "label": "Daily ritual", "description": "Warm water or milk" } },
-        "s3": { "type": "stat", "settings": { "value": "3–4 wks", "label": "Less shedding", "description": "With consistent use" } },
-        "s4": { "type": "stat", "settings": { "value": "90 days", "label": "Guarantee", "description": "Try risk-free" } }
+        "s1": {
+          "type": "stat",
+          "settings": {
+            "value": "14",
+            "label": "Botanicals",
+            "description": "Whole-herb DeepRoot blend"
+          }
+        },
+        "s2": {
+          "type": "stat",
+          "settings": {
+            "value": "1 scoop",
+            "label": "Daily ritual",
+            "description": "Warm water or milk"
+          }
+        },
+        "s3": {
+          "type": "stat",
+          "settings": {
+            "value": "3\u20134 wks",
+            "label": "Less shedding",
+            "description": "With consistent use"
+          }
+        },
+        "s4": {
+          "type": "stat",
+          "settings": {
+            "value": "90 days",
+            "label": "Guarantee",
+            "description": "Try risk-free"
+          }
+        }
       },
-      "block_order": ["s1", "s2", "s3", "s4"],
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
       "settings": {
         "soft_bg": false,
         "eyebrow": "What Kesha Mula is",
-        "heading": "India’s DeepRoot hair strength mix — clean nutrition for the follicle",
-        "text": "<p>Kesha Mula is a 100% clean & natural powder blend formulated with food-grade herbs and seeds like Amla, Flaxseed, Cumin, Beetroot, and Clove. It nourishes hair from within so strength returns where growth begins — not another oil that only coats the shaft.</p>"
+        "heading": "India\u2019s DeepRoot hair strength mix \u2014 clean nutrition for the follicle",
+        "text": "<p>Kesha Mula is a 100% clean & natural powder blend formulated with food-grade herbs and seeds like Amla, Flaxseed, Cumin, Beetroot, and Clove. It nourishes hair from within so strength returns where growth begins \u2014 not another oil that only coats the shaft.</p>"
       }
     },
     "compare": {
       "type": "brand-comparison",
       "blocks": {
-        "r1": { "type": "row", "settings": { "feature": "Targets the real reason hair falls", "other_1": "no", "other_2": "partial", "ours": "yes" } },
-        "r2": { "type": "row", "settings": { "feature": "Visible results in 4 weeks", "other_1": "no", "other_2": "partial", "ours": "yes" } },
-        "r3": { "type": "row", "settings": { "feature": "Long-term strength & density", "other_1": "no", "other_2": "partial", "ours": "yes" } },
-        "r4": { "type": "row", "settings": { "feature": "Clinically backed ingredients", "other_1": "no", "other_2": "partial", "ours": "yes" } },
-        "r5": { "type": "row", "settings": { "feature": "Supports hormone & stress-related fall", "other_1": "no", "other_2": "no", "ours": "yes" } },
-        "r6": { "type": "row", "settings": { "feature": "Works with your existing routine", "other_1": "yes", "other_2": "yes", "ours": "yes" } },
-        "r7": { "type": "row", "settings": { "feature": "No artificial sugars or preservatives", "other_1": "partial", "other_2": "no", "ours": "yes" } },
-        "r8": { "type": "row", "settings": { "feature": "100% vegan & pesticide-free", "other_1": "partial", "other_2": "partial", "ours": "yes" } }
+        "r1": {
+          "type": "row",
+          "settings": {
+            "feature": "Targets the real reason hair falls",
+            "other_1": "no",
+            "other_2": "partial",
+            "ours": "yes"
+          }
+        },
+        "r2": {
+          "type": "row",
+          "settings": {
+            "feature": "Visible results in 4 weeks",
+            "other_1": "no",
+            "other_2": "partial",
+            "ours": "yes"
+          }
+        },
+        "r3": {
+          "type": "row",
+          "settings": {
+            "feature": "Long-term strength & density",
+            "other_1": "no",
+            "other_2": "partial",
+            "ours": "yes"
+          }
+        },
+        "r4": {
+          "type": "row",
+          "settings": {
+            "feature": "Clinically backed ingredients",
+            "other_1": "no",
+            "other_2": "partial",
+            "ours": "yes"
+          }
+        },
+        "r5": {
+          "type": "row",
+          "settings": {
+            "feature": "Supports hormone & stress-related fall",
+            "other_1": "no",
+            "other_2": "no",
+            "ours": "yes"
+          }
+        },
+        "r6": {
+          "type": "row",
+          "settings": {
+            "feature": "Works with your existing routine",
+            "other_1": "yes",
+            "other_2": "yes",
+            "ours": "yes"
+          }
+        },
+        "r7": {
+          "type": "row",
+          "settings": {
+            "feature": "No artificial sugars or preservatives",
+            "other_1": "partial",
+            "other_2": "no",
+            "ours": "yes"
+          }
+        },
+        "r8": {
+          "type": "row",
+          "settings": {
+            "feature": "100% vegan & pesticide-free",
+            "other_1": "partial",
+            "other_2": "partial",
+            "ours": "yes"
+          }
+        }
       },
-      "block_order": ["r1", "r2", "r3", "r4", "r5", "r6", "r7", "r8"],
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5",
+        "r6",
+        "r7",
+        "r8"
+      ],
       "settings": {
         "eyebrow": "Why JustNatur",
         "heading": "Why should I trust this over what I already use?",
-        "text": "Oils and serums target the symptom. Kesha Mula targets the root cause — with clean, clinically minded botanicals.",
+        "text": "Oils and serums target the symptom. Kesha Mula targets the root cause \u2014 with clean, clinically minded botanicals.",
         "col_feature": "What matters",
         "col_other_1": "Oils & shampoos",
         "col_other_2": "Typical hair gummies",
@@ -164,73 +329,240 @@
     "ingredients": {
       "type": "ingredients",
       "blocks": {
-        "i1": { "type": "ingredient", "settings": { "title": "Amla", "text": "Nature’s vitamin C — supports follicle vitality and antioxidant defense." } },
-        "i2": { "type": "ingredient", "settings": { "title": "Flaxseed", "text": "Omega-rich seed that helps nourish hair from the inside out." } },
-        "i3": { "type": "ingredient", "settings": { "title": "Cumin", "text": "Food-grade spice traditionally used to support digestion and nutrient uptake." } },
-        "i4": { "type": "ingredient", "settings": { "title": "Beetroot", "text": "Adds natural sweetness and iron-supportive plant nutrition." } },
-        "i5": { "type": "ingredient", "settings": { "title": "Clove", "text": "Warm botanical note in a balanced, daily-drinkable blend." } },
-        "i6": { "type": "ingredient", "settings": { "title": "14-herb blend", "text": "A full DeepRoot formula built for long-term root strength — not a one-note gummy." } }
+        "i1": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Amla",
+            "text": "Nature\u2019s vitamin C \u2014 supports follicle vitality and antioxidant defense."
+          }
+        },
+        "i2": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Flaxseed",
+            "text": "Omega-rich seed that helps nourish hair from the inside out."
+          }
+        },
+        "i3": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Cumin",
+            "text": "Food-grade spice traditionally used to support digestion and nutrient uptake."
+          }
+        },
+        "i4": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Beetroot",
+            "text": "Adds natural sweetness and iron-supportive plant nutrition."
+          }
+        },
+        "i5": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Clove",
+            "text": "Warm botanical note in a balanced, daily-drinkable blend."
+          }
+        },
+        "i6": {
+          "type": "ingredient",
+          "settings": {
+            "title": "14-herb blend",
+            "text": "A full DeepRoot formula built for long-term root strength \u2014 not a one-note gummy."
+          }
+        }
       },
-      "block_order": ["i1", "i2", "i3", "i4", "i5", "i6"],
+      "block_order": [
+        "i1",
+        "i2",
+        "i3",
+        "i4",
+        "i5",
+        "i6"
+      ],
       "settings": {
         "eyebrow": "Key ingredients",
         "heading": "Each seed, herb, and leaf strengthens hair from root to tip",
-        "text": "DeepRoot Hair Strength Mix is carefully chosen to nourish the follicle — naturally, with no preservatives or artificial sugars.",
+        "text": "DeepRoot Hair Strength Mix is carefully chosen to nourish the follicle \u2014 naturally, with no preservatives or artificial sugars.",
         "chips": "Globally sourced | Clinically proven ingredients | Hypoallergenic | 100% pesticide free | No artificial sugars | 100% vegan"
       }
     },
     "benefits": {
       "type": "product-benefits",
       "blocks": {
-        "b1": { "type": "benefit", "settings": { "title": "Less fall", "text": "Supports a calmer shedding cycle from within." } },
-        "b2": { "type": "benefit", "settings": { "title": "Stronger roots", "text": "Feeds the follicle with botanical nutrition." } },
-        "b3": { "type": "benefit", "settings": { "title": "Visible density", "text": "Helps hair feel fuller as the cycle stabilizes." } },
-        "b4": { "type": "benefit", "settings": { "title": "Daily ease", "text": "One scoop. Warm water. Chatpata — not bitter." } }
+        "b1": {
+          "type": "benefit",
+          "settings": {
+            "title": "Less fall",
+            "text": "Supports a calmer shedding cycle from within."
+          }
+        },
+        "b2": {
+          "type": "benefit",
+          "settings": {
+            "title": "Stronger roots",
+            "text": "Feeds the follicle with botanical nutrition."
+          }
+        },
+        "b3": {
+          "type": "benefit",
+          "settings": {
+            "title": "Visible density",
+            "text": "Helps hair feel fuller as the cycle stabilizes."
+          }
+        },
+        "b4": {
+          "type": "benefit",
+          "settings": {
+            "title": "Daily ease",
+            "text": "One scoop. Warm water. Chatpata \u2014 not bitter."
+          }
+        }
       },
-      "block_order": ["b1", "b2", "b3", "b4"],
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
       "settings": {
         "eyebrow": "What it does to your hair",
         "heading": "A better day often begins with a stronger root rhythm.",
         "text": "Not a harsh overnight fix. A gentle daily habit for clearer, denser-feeling hair.",
-        "chips": "Whole-herb support · Caffeine-free · No bitter powders · No harsh stimulants"
+        "chips": "Whole-herb support \u00b7 Caffeine-free \u00b7 No bitter powders \u00b7 No harsh stimulants"
       }
     },
     "timeline": {
       "type": "results-timeline",
       "blocks": {
-        "t1": { "type": "step", "settings": { "week": "Week 1–2", "title": "Ritual locks in", "text": "One scoop nightly. Digestion and nutrient uptake begin supporting the follicle." } },
-        "t2": { "type": "step", "settings": { "week": "Week 3–4", "title": "Less shedding", "text": "Most users notice less hair on the pillow, brush, and bathroom floor." } },
-        "t3": { "type": "step", "settings": { "week": "Week 6–8", "title": "Stronger feel", "text": "Hair feels less brittle. Breakage reduces. Texture starts to improve." } },
-        "t4": { "type": "step", "settings": { "week": "Month 3–4", "title": "Visible density", "text": "Parting and crown often look fuller as the growth cycle stabilizes." } }
+        "t1": {
+          "type": "step",
+          "settings": {
+            "week": "Week 1\u20132",
+            "title": "Ritual locks in",
+            "text": "One scoop nightly. Digestion and nutrient uptake begin supporting the follicle."
+          }
+        },
+        "t2": {
+          "type": "step",
+          "settings": {
+            "week": "Week 3\u20134",
+            "title": "Less shedding",
+            "text": "Most users notice less hair on the pillow, brush, and bathroom floor."
+          }
+        },
+        "t3": {
+          "type": "step",
+          "settings": {
+            "week": "Week 6\u20138",
+            "title": "Stronger feel",
+            "text": "Hair feels less brittle. Breakage reduces. Texture starts to improve."
+          }
+        },
+        "t4": {
+          "type": "step",
+          "settings": {
+            "week": "Month 3\u20134",
+            "title": "Visible density",
+            "text": "Parting and crown often look fuller as the growth cycle stabilizes."
+          }
+        }
       },
-      "block_order": ["t1", "t2", "t3", "t4"],
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ],
       "settings": {}
     },
     "howto": {
       "type": "how-to-use",
       "blocks": {
-        "h1": { "type": "step", "settings": { "title": "Take one scoop", "text": "One measured scoop of Kesha Mula — start nightly for the first week." } },
-        "h2": { "type": "step", "settings": { "title": "Mix with warm water or milk", "text": "Stir into a full glass. Earthy and slightly spiced — balanced by beetroot and flaxseed." } },
-        "h3": { "type": "step", "settings": { "title": "Drink it down", "text": "No capsules. Easy for people who dislike bitter powders — tastes chatpata." } },
-        "h4": { "type": "step", "settings": { "title": "Stay consistent", "text": "Keep the ritual for 30–90 days. Move to a Value Pack once month-2 results show." } }
+        "h1": {
+          "type": "step",
+          "settings": {
+            "title": "Take one scoop",
+            "text": "One measured scoop of Kesha Mula \u2014 start nightly for the first week."
+          }
+        },
+        "h2": {
+          "type": "step",
+          "settings": {
+            "title": "Mix with warm water or milk",
+            "text": "Stir into a full glass. Earthy and slightly spiced \u2014 balanced by beetroot and flaxseed."
+          }
+        },
+        "h3": {
+          "type": "step",
+          "settings": {
+            "title": "Drink it down",
+            "text": "No capsules. Easy for people who dislike bitter powders \u2014 tastes chatpata."
+          }
+        },
+        "h4": {
+          "type": "step",
+          "settings": {
+            "title": "Stay consistent",
+            "text": "Keep the ritual for 30\u201390 days. Move to a Value Pack once month-2 results show."
+          }
+        }
       },
-      "block_order": ["h1", "h2", "h3", "h4"],
+      "block_order": [
+        "h1",
+        "h2",
+        "h3",
+        "h4"
+      ],
       "settings": {
         "eyebrow": "How to use Kesha Mula",
         "heading": "A simple night habit. A more natural morning.",
-        "text": "No capsules. No bitter powder chaos. One scoop into warm water or milk — designed to taste chatpata and stay easy every day.",
-        "note": "Consistency matters more than intensity. Give the cycle 4–8 weeks before judging density."
+        "text": "No capsules. No bitter powder chaos. One scoop into warm water or milk \u2014 designed to taste chatpata and stay easy every day.",
+        "note": "Consistency matters more than intensity. Give the cycle 4\u20138 weeks before judging density."
       }
     },
     "audience": {
       "type": "product-audience",
       "blocks": {
-        "a1": { "type": "audience", "settings": { "tag": "After wash", "title": "Feels thinner", "text": "When hair seems to sit flatter and look less full than before." } },
-        "a2": { "type": "audience", "settings": { "tag": "Stress weeks", "title": "Routine is irregular", "text": "When sleep, diet, and stress start showing up in the part line." } },
-        "a3": { "type": "audience", "settings": { "tag": "Postpartum", "title": "Cycle feels off", "text": "When the body’s timing needs gentler nutritional support." } },
-        "a4": { "type": "audience", "settings": { "tag": "Daily care", "title": "Wants clean support", "text": "Without harsh stimulants or another empty topical promise." } }
+        "a1": {
+          "type": "audience",
+          "settings": {
+            "tag": "After wash",
+            "title": "Feels thinner",
+            "text": "When hair seems to sit flatter and look less full than before."
+          }
+        },
+        "a2": {
+          "type": "audience",
+          "settings": {
+            "tag": "Stress weeks",
+            "title": "Routine is irregular",
+            "text": "When sleep, diet, and stress start showing up in the part line."
+          }
+        },
+        "a3": {
+          "type": "audience",
+          "settings": {
+            "tag": "Postpartum",
+            "title": "Cycle feels off",
+            "text": "When the body\u2019s timing needs gentler nutritional support."
+          }
+        },
+        "a4": {
+          "type": "audience",
+          "settings": {
+            "tag": "Daily care",
+            "title": "Wants clean support",
+            "text": "Without harsh stimulants or another empty topical promise."
+          }
+        }
       },
-      "block_order": ["a1", "a2", "a3", "a4"],
+      "block_order": [
+        "a1",
+        "a2",
+        "a3",
+        "a4"
+      ],
       "settings": {}
     },
     "guarantee": {
@@ -239,7 +571,7 @@
         "badge_text": "90-Day Money Back",
         "eyebrow": "Risk-free",
         "heading": "Try Kesha Mula risk-free for 90 days",
-        "text": "If you’re not seeing a meaningful reduction in hair fall with consistent use, reach out — we’ll make it right. Clean formula. Free express shipping. No empty promises.",
+        "text": "If you\u2019re not seeing a meaningful reduction in hair fall with consistent use, reach out \u2014 we\u2019ll make it right. Clean formula. Free express shipping. No empty promises.",
         "pills": "Free express shipping | 100% clean & natural | Clinically proven ingredients | Heavy metal tested"
       }
     },
@@ -250,28 +582,28 @@
           "type": "faq",
           "settings": {
             "question": "How long until I see results for my hair fall?",
-            "answer": "Expect a noticeable reduction in shedding in 3–4 weeks. Consistent daily use is key, as it takes time to nourish the follicle and stabilize the hair growth cycle. Full density improvements are usually seen by month 3–4."
+            "answer": "Expect a noticeable reduction in shedding in 3\u20134 weeks. Consistent daily use is key, as it takes time to nourish the follicle and stabilize the hair growth cycle. Full density improvements are usually seen by month 3\u20134."
           }
         },
         "f2": {
           "type": "faq",
           "settings": {
             "question": "Is this safe to take daily alongside my vitamins or medication?",
-            "answer": "Yes — our formula uses 100% natural, food-grade ingredients like Amla, Flaxseed, and Cumin. As a food supplement, it is designed to complement your diet. Consult your doctor if you have specific medical conditions."
+            "answer": "Yes \u2014 our formula uses 100% natural, food-grade ingredients like Amla, Flaxseed, and Cumin. As a food supplement, it is designed to complement your diet. Consult your doctor if you have specific medical conditions."
           }
         },
         "f3": {
           "type": "faq",
           "settings": {
             "question": "What does it taste like?",
-            "answer": "The blend is naturally earthy and slightly spiced — chatpata, not bitter. It’s balanced by the sweetness of beetroot and the bulk of flaxseed, and mixes easily into warm water, milk, or smoothies."
+            "answer": "The blend is naturally earthy and slightly spiced \u2014 chatpata, not bitter. It\u2019s balanced by the sweetness of beetroot and the bulk of flaxseed, and mixes easily into warm water, milk, or smoothies."
           }
         },
         "f4": {
           "type": "faq",
           "settings": {
             "question": "How does this compare to a hair serum or topical oil?",
-            "answer": "We target the root cause; topicals target the symptom. Serums and oils work outside the scalp for shine and manageability. Kesha Mula delivers nutrients internally to strengthen the hair root — the only way to stop fall and stimulate new growth."
+            "answer": "We target the root cause; topicals target the symptom. Serums and oils work outside the scalp for shine and manageability. Kesha Mula delivers nutrients internally to strengthen the hair root \u2014 the only way to stop fall and stimulate new growth."
           }
         },
         "f5": {
@@ -282,7 +614,13 @@
           }
         }
       },
-      "block_order": ["f1", "f2", "f3", "f4", "f5"],
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5"
+      ],
       "settings": {
         "open_first": true
       }
@@ -318,7 +656,11 @@
           }
         }
       },
-      "block_order": ["rev1", "rev2", "rev3"],
+      "block_order": [
+        "rev1",
+        "rev2",
+        "rev3"
+      ],
       "settings": {
         "eyebrow": "Customer reviews",
         "heading": "Let customers speak for us",
@@ -330,7 +672,7 @@
       "settings": {
         "eyebrow": "Start tonight",
         "heading": "Start your 30-day nourishment journey today",
-        "text": "Join thousands rebuilding their roots with Kesha Mula — clean nutrition, visible less fall in weeks.",
+        "text": "Join thousands rebuilding their roots with Kesha Mula \u2014 clean nutrition, visible less fall in weeks.",
         "button_label": "Choose your pack",
         "secondary_label": "Read FAQs",
         "pills": "Trusted by 10,000+ | 90-day guarantee | Free express shipping | Clinically proven"
@@ -345,12 +687,60 @@
         "products_to_show": 3,
         "button_label": "Shop all"
       }
+    },
+    "videos": {
+      "type": "video-carousel",
+      "blocks": {
+        "v1": {
+          "type": "video",
+          "settings": {
+            "title": "How to use",
+            "caption": "1 scoop \u00b7 warm water \u00b7 nightly"
+          }
+        },
+        "v2": {
+          "type": "video",
+          "settings": {
+            "title": "Customer story",
+            "caption": "Less fall after consistent use"
+          }
+        },
+        "v3": {
+          "type": "video",
+          "settings": {
+            "title": "Founder note",
+            "caption": "Why we built root nutrition"
+          }
+        }
+      },
+      "block_order": [
+        "v1",
+        "v2",
+        "v3"
+      ],
+      "settings": {}
+    },
+    "fbt": {
+      "type": "fbt",
+      "settings": {
+        "eyebrow": "Complete the ritual",
+        "heading": "Frequently bought together",
+        "text": "Inside nutrition + outside oil care.",
+        "fallback_title": "Kesha Amrith Hair Oil",
+        "bundle_label": "Complete Hair Kit",
+        "button_label": "Add both to cart"
+      }
+    },
+    "founder": {
+      "type": "founder-story",
+      "settings": {}
     }
   },
   "order": [
     "main",
-    "problem",
     "before_after",
+    "videos",
+    "problem",
     "story",
     "compare",
     "ingredients",
@@ -358,9 +748,11 @@
     "timeline",
     "howto",
     "audience",
+    "fbt",
     "guarantee",
-    "faq",
     "reviews",
+    "faq",
+    "founder",
     "final_cta",
     "related"
   ]

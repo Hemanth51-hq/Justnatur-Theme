@@ -1,35 +1,56 @@
 {
   "current": {
-    "logo_width": 148,
+    "logo_width": 140,
     "brand_tagline": "Clean nutrition. Stronger roots.",
-    "color_background": "#FAFAF7",
-    "color_surface": "#FFFFFF",
-    "color_text": "#1A1C19",
-    "color_text_muted": "#5C6358",
-    "color_accent": "#1F6B4F",
-    "color_accent_soft": "#E7F2EC",
-    "color_highlight": "#C45C26",
-    "color_border": "#D9DED6",
+    "color_background": "#F4E2CE",
+    "color_surface": "#FFF8F0",
+    "color_text": "#1A1A1A",
+    "color_text_muted": "#555555",
+    "color_muted": "#777777",
+    "color_accent": "#B53325",
+    "color_accent_soft": "#F3D6C8",
+    "color_highlight": "#E5A657",
+    "color_secondary": "#DFBC94",
+    "color_border": "#E6D0B5",
     "type_scale": 100,
     "cart_drawer_enabled": true,
     "cart_empty_message": "Your cart is waiting for cleaner nutrition.",
+    "enable_cart_progress": true,
+    "progress_tier_1": 499,
+    "progress_tier_1_label": "Free Shipping",
+    "progress_tier_2": 999,
+    "progress_tier_2_label": "Free Hair Oil",
+    "progress_tier_3": 1499,
+    "progress_tier_3_label": "Premium Gift",
     "show_vendor": false,
     "enable_sticky_atc": true,
+    "social_proof_rating": "4.6/5 · Based on 50 reviews",
+    "social_proof_buyers": "Trusted by 10,000+ people",
     "social_instagram": "https://www.instagram.com/",
+    "social_whatsapp": "917075987708",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
+        "blocks": {
+          "a1": { "type": "message", "settings": { "text": "Free Express Shipping On All Orders" } },
+          "a2": { "type": "message", "settings": { "text": "COD Available Across India" } },
+          "a3": { "type": "message", "settings": { "text": "Trusted by 10,000+ People" } },
+          "a4": { "type": "message", "settings": { "text": "100% Clean & Ayurvedic Ingredients" } },
+          "a5": { "type": "message", "settings": { "text": "Secure Payments · UPI · Cards · Netbanking" } }
+        },
+        "block_order": ["a1", "a2", "a3", "a4", "a5"],
         "settings": {
           "enable": true,
-          "text": "Free express shipping on all orders · Clinically backed. 100% natural.",
-          "link": ""
+          "rotate": true,
+          "interval": 4
         }
       },
       "header": {
         "type": "header",
         "settings": {
           "menu": "main-menu",
-          "show_search": true
+          "show_search": true,
+          "transparent_on_home": true
         }
       },
       "footer": {

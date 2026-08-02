@@ -1,11 +1,14 @@
-<div class="header-wrapper">
+<div
+  class="header-wrapper{% if section.settings.transparent_on_home and template.name == 'index' %} header-wrapper--transparent{% endif %}"
+  data-header
+>
   <header class="header page-width">
     <button
       type="button"
       class="icon-btn mobile-nav-toggle"
       data-nav-toggle
       aria-expanded="false"
-      aria-controls="MobileNav"
+      aria-controls="MobileNavDrawer"
       aria-label="{{ 'general.accessibility.menu' | t }}"
     >
       {% render 'icon', icon: 'menu' %}
@@ -14,12 +17,12 @@
     <nav class="header__nav" aria-label="Primary">
       {%- if section.settings.menu != blank -%}
         {%- for link in section.settings.menu.links -%}
-          <a href="{{ link.url }}">{{ link.title }}</a>
+          <a href="{{ link.url }}" class="nav-link">{{ link.title }}</a>
         {%- endfor -%}
       {%- else -%}
-        <a href="{{ routes.all_products_collection_url }}">Shop</a>
-        <a href="/pages/about">Our Story</a>
-        <a href="/pages/science">Science</a>
+        <a href="{{ routes.all_products_collection_url }}" class="nav-link">Shop</a>
+        <a href="/pages/about" class="nav-link">Our Story</a>
+        <a href="/pages/science" class="nav-link">Science</a>
       {%- endif -%}
     </nav>
 
@@ -33,12 +36,12 @@
 
     <div class="header__actions">
       {%- if section.settings.show_search -%}
-        <a class="icon-btn" href="{{ routes.search_url }}" aria-label="{{ 'general.accessibility.search' | t }}">
+        <a class="icon-btn icon-btn--search" href="{{ routes.search_url }}" aria-label="{{ 'general.accessibility.search' | t }}">
           {% render 'icon', icon: 'search' %}
         </a>
       {%- endif -%}
       <a
-        class="icon-btn"
+        class="icon-btn icon-btn--cart"
         href="{{ routes.cart_url }}"
         data-cart-open
         aria-label="{{ 'general.accessibility.cart' | t }}"
@@ -48,16 +51,32 @@
       </a>
     </div>
   </header>
+</div>
 
-  <div class="mobile-nav page-width" id="MobileNav" data-mobile-nav>
-    {%- if section.settings.menu != blank -%}
-      {%- for link in section.settings.menu.links -%}
-        <a href="{{ link.url }}">{{ link.title }}</a>
-      {%- endfor -%}
-    {%- else -%}
-      <a href="{{ routes.all_products_collection_url }}">Shop</a>
-      <a href="/pages/about">Our Story</a>
-      <a href="/pages/science">Science</a>
+<div class="mobile-drawer" id="MobileNavDrawer" data-mobile-drawer aria-hidden="true">
+  <div class="mobile-drawer__panel">
+    <div class="mobile-drawer__top">
+      <div class="header__logo-text">Just<span>Natur</span></div>
+      <button type="button" class="icon-btn" data-nav-close aria-label="{{ 'general.accessibility.close' | t }}">
+        {% render 'icon', icon: 'close' %}
+      </button>
+    </div>
+    <nav class="mobile-drawer__nav">
+      {%- if section.settings.menu != blank -%}
+        {%- for link in section.settings.menu.links -%}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        {%- endfor -%}
+      {%- else -%}
+        <a href="{{ routes.all_products_collection_url }}">Shop</a>
+        <a href="/pages/about">Our Story</a>
+        <a href="/pages/science">Science</a>
+        <a href="/pages/contact">Contact</a>
+      {%- endif -%}
+    </nav>
+    {%- if settings.social_whatsapp != blank -%}
+      <a class="btn btn--primary btn--full" href="https://wa.me/{{ settings.social_whatsapp }}" target="_blank" rel="noopener">
+        {% render 'icon', icon: 'whatsapp' %} Chat on WhatsApp
+      </a>
     {%- endif -%}
   </div>
 </div>
@@ -76,6 +95,12 @@
       "type": "checkbox",
       "id": "show_search",
       "label": "Show search",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "transparent_on_home",
+      "label": "Transparent header on homepage hero",
       "default": true
     }
   ]

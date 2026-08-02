@@ -18,7 +18,7 @@
   <div class="hero__overlay"></div>
   <div class="page-width">
     <div class="hero__content">
-      <p class="eyebrow" style="color:#9fd6b8;">{{ section.settings.eyebrow }}</p>
+      <p class="eyebrow" style="color:var(--color-highlight);">{{ section.settings.eyebrow }}</p>
       <div class="hero__brand">{{ section.settings.brand_line | default: 'Just' }}<span>{{ section.settings.brand_accent | default: 'Natur' }}</span></div>
       <h1 class="display" style="font-size:clamp(1.6rem,3.4vw,2.5rem);max-width:18ch;">{{ section.settings.heading }}</h1>
       {%- if section.settings.text != blank -%}

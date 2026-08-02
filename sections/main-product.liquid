@@ -1,6 +1,16 @@
 {%- liquid
   assign current_variant = product.selected_or_first_available_variant
   assign featured = product.selected_or_first_available_variant.featured_media | default: product.featured_media
+  assign rating_text = section.settings.rating_text | default: settings.social_proof_rating
+  assign buyers_text = section.settings.buyers_text | default: settings.social_proof_buyers
+  assign pack2_price = current_variant.price | times: 2
+  assign pack3_price = current_variant.price | times: 3
+  if section.settings.pack_2_sale_price > 0
+    assign pack2_price = section.settings.pack_2_sale_price | times: 100
+  endif
+  if section.settings.pack_3_sale_price > 0
+    assign pack3_price = section.settings.pack_3_sale_price | times: 100
+  endif
 -%}
 
 <section class="product-main" data-product-section>
@@ -15,6 +25,7 @@
             alt="{{ featured.alt | default: product.title | escape }}"
             width="1200"
             height="1200"
+            fetchpriority="high"
             data-gallery-main
           >
         {%- else -%}
@@ -24,7 +35,7 @@
 
       {%- if product.media.size > 1 -%}
         <div class="product-gallery__thumbs">
-          {%- for media in product.media limit: 5 -%}
+          {%- for media in product.media limit: 6 -%}
             <button
               type="button"
               class="product-gallery__thumb{% if media == featured %} is-active{% endif %}"
@@ -50,8 +61,14 @@
 
       {%- if section.settings.show_rating -%}
         <div class="product-info__rating">
-          <span class="stars" aria-hidden="true">★★★★★</span>
-          <span>{{ section.settings.rating_text }}</span>
+          <span class="stars" aria-hidden="true">
+            {% render 'icon', icon: 'star', size: 16 %}
+            {% render 'icon', icon: 'star', size: 16 %}
+            {% render 'icon', icon: 'star', size: 16 %}
+            {% render 'icon', icon: 'star', size: 16 %}
+            {% render 'icon', icon: 'star', size: 16 %}
+          </span>
+          <span>{{ rating_text }}</span>
         </div>
       {%- endif -%}
 
@@ -73,10 +90,30 @@
         >
           {{ current_variant.compare_at_price | money }}
         </span>
+        <span class="price__save" data-pack-save {% unless current_variant.compare_at_price > current_variant.price %}hidden{% endunless %}>
+          Save
+        </span>
       </div>
 
       {%- if section.settings.urgency_text != blank -%}
         <div class="urgency-bar">{{ section.settings.urgency_text }}</div>
+      {%- endif -%}
+
+      {%- if section.settings.enable_scarcity and section.settings.scarcity_text != blank -%}
+        <div class="scarcity-bar" data-scarcity>
+          <span class="scarcity-bar__dot" aria-hidden="true"></span>
+          <span data-scarcity-text>{{ section.settings.scarcity_text }}</span>
+          {%- if section.settings.scarcity_stock != blank -%}
+            <strong data-scarcity-stock>{{ section.settings.scarcity_stock }} left</strong>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.enable_recent and section.settings.recent_text != blank -%}
+        <div class="recent-purchase" data-recent-purchase>
+          {% render 'icon', icon: 'tick', size: 16 %}
+          <span>{{ section.settings.recent_text }}</span>
+        </div>
       {%- endif -%}
 
       {%- form 'product', product, data-product-form: true, id: 'ProductForm' -%}
@@ -85,7 +122,6 @@
         <div class="pack-picker" data-pack-picker>
           <div class="pack-picker__label">{{ section.settings.pack_heading }}</div>
           <div class="pack-options">
-            {%- comment -%} Pack 1 {%- endcomment -%}
             <button
               type="button"
               class="pack-option is-selected"
@@ -93,6 +129,7 @@
               data-qty="1"
               data-price="{{ current_variant.price }}"
               data-compare="{{ current_variant.compare_at_price | default: current_variant.price }}"
+              data-total="{{ current_variant.price }}"
             >
               <span class="pack-option__radio" aria-hidden="true"></span>
               <span>
@@ -102,14 +139,14 @@
               <span class="pack-option__price">{{ current_variant.price | money }}</span>
             </button>
 
-            {%- comment -%} Pack 2 {%- endcomment -%}
             <button
               type="button"
               class="pack-option"
               data-pack-option
               data-qty="2"
               data-price="{{ current_variant.price }}"
-              data-compare="{{ current_variant.compare_at_price | default: current_variant.price }}"
+              data-compare="{{ current_variant.compare_at_price | default: current_variant.price | times: 2 }}"
+              data-total="{{ pack2_price }}"
             >
               {%- if section.settings.pack_2_badge != blank -%}
                 <span class="pack-option__badge badge badge--hot">{{ section.settings.pack_2_badge }}</span>
@@ -118,30 +155,18 @@
               <span>
                 <div class="pack-option__title">{{ section.settings.pack_2_title }}</div>
                 <div class="pack-option__meta">{{ section.settings.pack_2_meta }}</div>
-                <div class="combo-slots" data-combo-slots>
-                  <div class="combo-slot">
-                    <span class="combo-slot__index">#1</span>
-                    <span class="combo-slot__name">{{ product.title }}</span>
-                    <span class="combo-slot__change">{{ 'products.product.change' | t }}</span>
-                  </div>
-                  <div class="combo-slot">
-                    <span class="combo-slot__index">#2</span>
-                    <span class="combo-slot__name">{{ section.settings.sibling_1 | default: 'Kesha Amrith Hair Oil' }}</span>
-                    <span class="combo-slot__change">{{ 'products.product.change' | t }}</span>
-                  </div>
-                </div>
               </span>
-              <span class="pack-option__price">{{ current_variant.price | times: 2 | money }}</span>
+              <span class="pack-option__price">{{ pack2_price | money }}</span>
             </button>
 
-            {%- comment -%} Pack 3 {%- endcomment -%}
             <button
               type="button"
               class="pack-option"
               data-pack-option
               data-qty="3"
               data-price="{{ current_variant.price }}"
-              data-compare="{{ current_variant.compare_at_price | default: current_variant.price }}"
+              data-compare="{{ current_variant.compare_at_price | default: current_variant.price | times: 3 }}"
+              data-total="{{ pack3_price }}"
             >
               {%- if section.settings.pack_3_badge != blank -%}
                 <span class="pack-option__badge badge">{{ section.settings.pack_3_badge }}</span>
@@ -150,27 +175,11 @@
               <span>
                 <div class="pack-option__title">{{ section.settings.pack_3_title }}</div>
                 <div class="pack-option__meta">{{ section.settings.pack_3_meta }}</div>
-                <div class="combo-slots" data-combo-slots>
-                  <div class="combo-slot">
-                    <span class="combo-slot__index">#1</span>
-                    <span class="combo-slot__name">{{ product.title }}</span>
-                    <span class="combo-slot__change">{{ 'products.product.change' | t }}</span>
-                  </div>
-                  <div class="combo-slot">
-                    <span class="combo-slot__index">#2</span>
-                    <span class="combo-slot__name">{{ section.settings.sibling_1 | default: 'Kesha Amrith Hair Oil' }}</span>
-                    <span class="combo-slot__change">{{ 'products.product.change' | t }}</span>
-                  </div>
-                  <div class="combo-slot">
-                    <span class="combo-slot__index">#3</span>
-                    <span class="combo-slot__name">{{ section.settings.sibling_2 | default: 'Kesha Combo' }}</span>
-                    <span class="combo-slot__change">{{ 'products.product.change' | t }}</span>
-                  </div>
-                </div>
               </span>
-              <span class="pack-option__price">{{ current_variant.price | times: 3 | money }}</span>
+              <span class="pack-option__price">{{ pack3_price | money }}</span>
             </button>
           </div>
+          <p class="pack-note muted">{{ section.settings.pack_note }}</p>
         </div>
 
         {%- unless product.has_only_default_variant -%}
@@ -180,16 +189,10 @@
               <select
                 id="Option-{{ section.id }}-{{ forloop.index0 }}"
                 name="options[{{ option.name | escape }}]"
-                form="ProductForm"
-                style="width:100%;padding:0.8rem 1rem;border-radius:999px;border:1px solid var(--color-border);background:#fff;"
+                class="field-select"
               >
                 {%- for value in option.values -%}
-                  <option
-                    value="{{ value | escape }}"
-                    {% if option.selected_value == value %}selected{% endif %}
-                  >
-                    {{ value }}
-                  </option>
+                  <option value="{{ value | escape }}" {% if option.selected_value == value %}selected{% endif %}>{{ value }}</option>
                 {%- endfor -%}
               </select>
             {%- endfor -%}
@@ -204,11 +207,12 @@
           </div>
           <button
             type="submit"
-            class="btn btn--dark btn--full"
+            class="btn btn--primary btn--full btn--magnetic"
+            data-ripple
             {% unless current_variant.available %}disabled{% endunless %}
           >
             {%- if current_variant.available -%}
-              {{ 'products.product.add_to_cart' | t }}
+              {{ section.settings.atc_label | default: 'Add to cart' }}
             {%- else -%}
               {{ 'products.product.sold_out' | t }}
             {%- endif -%}
@@ -216,25 +220,40 @@
         </div>
       {%- endform -%}
 
-      <div class="trust-row">
-        {%- for block in section.blocks -%}
-          {%- if block.type == 'trust' -%}
-            <div class="trust-item" {{ block.shopify_attributes }}>
-              <div class="trust-item__icon">
-                {% render 'icon', icon: block.settings.icon %}
-              </div>
-              <div>
-                <strong>{{ block.settings.title }}</strong>
-                <span>{{ block.settings.text }}</span>
-              </div>
-            </div>
-          {%- endif -%}
-        {%- endfor -%}
+      {%- if settings.enable_cart_progress -%}
+        <div class="offer-progress" data-offer-progress data-cart-total="{{ cart.total_price }}">
+          <div class="offer-progress__labels">
+            <span>{{ settings.progress_tier_1_label }}</span>
+            <span>{{ settings.progress_tier_2_label }}</span>
+            <span>{{ settings.progress_tier_3_label }}</span>
+          </div>
+          <div class="offer-progress__track">
+            <div class="offer-progress__fill" data-progress-fill style="width:0%"></div>
+          </div>
+          <p class="offer-progress__msg muted" data-progress-msg>Add more to unlock rewards</p>
+        </div>
+      {%- endif -%}
+
+      <div class="checkout-trust">
+        <div class="checkout-trust__row">
+          <span>{% render 'icon', icon: 'cod', size: 18 %} {{ section.settings.cod_text }}</span>
+          <span>{% render 'icon', icon: 'truck', size: 18 %} {{ section.settings.delivery_text }}</span>
+        </div>
+        <div class="checkout-trust__row">
+          <span>{% render 'icon', icon: 'return', size: 18 %} {{ section.settings.returns_text }}</span>
+          <span>{% render 'icon', icon: 'shield', size: 18 %} {{ section.settings.secure_text }}</span>
+        </div>
+        <div class="payment-icons" aria-label="Payment methods">
+          <span class="payment-chip">{% render 'icon', icon: 'upi', size: 16 %} UPI</span>
+          <span class="payment-chip">{% render 'icon', icon: 'cod', size: 16 %} COD</span>
+          <span class="payment-chip">{% render 'icon', icon: 'card', size: 16 %} Cards</span>
+          <span class="payment-chip">{% render 'icon', icon: 'shield', size: 16 %} Netbanking</span>
+        </div>
       </div>
 
       <div class="assurance-strip">
-        <span><strong>4.6</strong> Rated · 25,000+ buyers</span>
-        <span><strong>Authenticity</strong> · Clean botanicals</span>
+        <span><strong>{{ rating_text }}</strong></span>
+        <span><strong>{{ buyers_text }}</strong></span>
         <span><strong>Lab tested</strong> · Heavy-metal screened</span>
       </div>
     </div>
@@ -252,11 +271,14 @@
         </div>
         <div style="min-width:0;">
           <div class="sticky-atc__title">{{ product.title }}</div>
-          <div class="sticky-atc__price" data-sticky-price>{{ current_variant.price | money }}</div>
+          <div class="sticky-atc__price">
+            <span data-sticky-price>{{ current_variant.price | money }}</span>
+            · COD available
+          </div>
         </div>
       </div>
-      <button type="button" class="btn btn--dark" data-sticky-submit {% unless current_variant.available %}disabled{% endunless %}>
-        {{ 'products.product.add_to_cart' | t }}
+      <button type="button" class="btn btn--primary btn--magnetic" data-sticky-submit data-ripple {% unless current_variant.available %}disabled{% endunless %}>
+        {{ section.settings.atc_label | default: 'Add to cart' }}
       </button>
     </div>
   </div>
@@ -266,174 +288,51 @@
 {
   "name": "Product information",
   "settings": [
-    {
-      "type": "text",
-      "id": "kicker",
-      "label": "Kicker",
-      "default": "FROM WITHIN | NOT TOPICAL | NO EMPTY CLAIMS"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_rating",
-      "label": "Show rating",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "rating_text",
-      "label": "Rating text",
-      "default": "4.6/5 · Based on 151 reviews"
-    },
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "FROM WITHIN | NOT TOPICAL | CLINICALLY PROVEN" },
+    { "type": "checkbox", "id": "show_rating", "label": "Show rating", "default": true },
+    { "type": "text", "id": "rating_text", "label": "Rating text", "default": "4.6/5 · Based on 50 reviews" },
+    { "type": "text", "id": "buyers_text", "label": "Buyers text", "default": "Trusted by 10,000+ people" },
     {
       "type": "text",
       "id": "promise_text",
       "label": "Promise chips",
-      "default": "5× Less Hair Fall | 3× Stronger Roots | 2× Visible Regrowth | Clinically Proven",
+      "default": "Fights hair fall at the root | Visible results in weeks | 100% natural | Clinically proven",
       "info": "Separate with |"
     },
     {
       "type": "text",
       "id": "urgency_text",
       "label": "Urgency bar",
-      "default": "Get free Kesha Amrith Hair Oil on prepaid orders · 90-day money-back guarantee"
+      "default": "Get free Kesha Amrith Hair Oil on prepaid orders · 90-day money-back"
     },
+    { "type": "checkbox", "id": "enable_scarcity", "label": "Show scarcity (theme-editable only)", "default": false },
+    { "type": "text", "id": "scarcity_text", "label": "Scarcity text", "default": "Selling fast this week" },
+    { "type": "text", "id": "scarcity_stock", "label": "Stock remaining label", "default": "37", "info": "Leave blank to hide stock number. Never invent fake stock." },
+    { "type": "checkbox", "id": "enable_recent", "label": "Show recently purchased note", "default": true },
+    { "type": "text", "id": "recent_text", "label": "Recently purchased text", "default": "Ananya from Hyderabad bought this 12 mins ago" },
+    { "type": "text", "id": "pack_heading", "label": "Pack heading", "default": "Choose your hair transformation pack" },
+    { "type": "text", "id": "pack_1_title", "label": "Pack 1 title", "default": "Trail Pack · 15 Days" },
+    { "type": "text", "id": "pack_1_meta", "label": "Pack 1 meta", "default": "1 pouch · Start the root ritual" },
+    { "type": "text", "id": "pack_2_title", "label": "Pack 2 title", "default": "Value Pack · 2 units" },
+    { "type": "text", "id": "pack_2_meta", "label": "Pack 2 meta", "default": "Most chosen · Better per-day value" },
+    { "type": "text", "id": "pack_2_badge", "label": "Pack 2 badge", "default": "Most chosen" },
+    { "type": "number", "id": "pack_2_sale_price", "label": "Pack 2 total price (₹)", "default": 0, "info": "0 = 2 × variant price" },
+    { "type": "text", "id": "pack_3_title", "label": "Pack 3 title", "default": "Best Deal · 3 units" },
+    { "type": "text", "id": "pack_3_meta", "label": "Pack 3 meta", "default": "Best value for 90-day consistency" },
+    { "type": "text", "id": "pack_3_badge", "label": "Pack 3 badge", "default": "Best value" },
+    { "type": "number", "id": "pack_3_sale_price", "label": "Pack 3 total price (₹)", "default": 0, "info": "0 = 3 × variant price" },
     {
       "type": "text",
-      "id": "pack_heading",
-      "label": "Pack heading",
-      "default": "Choose your hair transformation pack"
+      "id": "pack_note",
+      "label": "Pack honesty note",
+      "default": "Packs add multiple units of this product. Pair with Kesha Amrith from Frequently Bought Together below."
     },
-    {
-      "type": "text",
-      "id": "pack_1_title",
-      "label": "Pack 1 title",
-      "default": "Trail Pack · 15 Days"
-    },
-    {
-      "type": "text",
-      "id": "pack_1_meta",
-      "label": "Pack 1 meta",
-      "default": "1 pouch · Start the root ritual"
-    },
-    {
-      "type": "text",
-      "id": "pack_2_title",
-      "label": "Pack 2 title",
-      "default": "Value Pack · Any 2"
-    },
-    {
-      "type": "text",
-      "id": "pack_2_meta",
-      "label": "Pack 2 meta",
-      "default": "Select your combo"
-    },
-    {
-      "type": "text",
-      "id": "pack_2_badge",
-      "label": "Pack 2 badge",
-      "default": "Most chosen"
-    },
-    {
-      "type": "text",
-      "id": "pack_3_title",
-      "label": "Pack 3 title",
-      "default": "Best Deal · Any 3"
-    },
-    {
-      "type": "text",
-      "id": "pack_3_meta",
-      "label": "Pack 3 meta",
-      "default": "Select your combo"
-    },
-    {
-      "type": "text",
-      "id": "pack_3_badge",
-      "label": "Pack 3 badge",
-      "default": "Best value"
-    },
-    {
-      "type": "text",
-      "id": "sibling_1",
-      "label": "Sibling product 1 name",
-      "default": "Kesha Amrith Hair Oil"
-    },
-    {
-      "type": "text",
-      "id": "sibling_2",
-      "label": "Sibling product 2 name",
-      "default": "Kesha Combo"
-    }
+    { "type": "text", "id": "atc_label", "label": "Add to cart label", "default": "Add to cart" },
+    { "type": "text", "id": "cod_text", "label": "COD text", "default": "COD available" },
+    { "type": "text", "id": "delivery_text", "label": "Delivery text", "default": "3–5 day delivery" },
+    { "type": "text", "id": "returns_text", "label": "Returns text", "default": "90-day ease" },
+    { "type": "text", "id": "secure_text", "label": "Secure text", "default": "Secure checkout" }
   ],
-  "blocks": [
-    {
-      "type": "trust",
-      "name": "Trust item",
-      "settings": [
-        {
-          "type": "select",
-          "id": "icon",
-          "label": "Icon",
-          "options": [
-            { "value": "truck", "label": "Truck" },
-            { "value": "shield", "label": "Shield" },
-            { "value": "leaf", "label": "Leaf" },
-            { "value": "star", "label": "Star" }
-          ],
-          "default": "truck"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title",
-          "default": "Delivery within India"
-        },
-        {
-          "type": "text",
-          "id": "text",
-          "label": "Text",
-          "default": "Same-day dispatch · Free shipping · 3–5 business days"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Product information",
-      "blocks": [
-        {
-          "type": "trust",
-          "settings": {
-            "icon": "truck",
-            "title": "Delivery within India",
-            "text": "Same-day dispatch · Free pan-India delivery · 3–5 business days"
-          }
-        },
-        {
-          "type": "trust",
-          "settings": {
-            "icon": "shield",
-            "title": "Secure checkout",
-            "text": "Protected payments · Prepaid discount available"
-          }
-        },
-        {
-          "type": "trust",
-          "settings": {
-            "icon": "leaf",
-            "title": "Clean formula",
-            "text": "100% natural · No preservatives · Food-grade herbs"
-          }
-        },
-        {
-          "type": "trust",
-          "settings": {
-            "icon": "star",
-            "title": "Results people feel",
-            "text": "Trusted by 25,000+ women for hair health"
-          }
-        }
-      ]
-    }
-  ]
+  "presets": [{ "name": "Product information" }]
 }
 {% endschema %}

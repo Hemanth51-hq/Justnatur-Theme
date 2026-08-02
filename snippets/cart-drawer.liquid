@@ -16,6 +16,17 @@
     </div>
   </div>
   <div class="cart-drawer__footer">
+    {%- if settings.enable_cart_progress -%}
+      <div class="offer-progress" data-offer-progress style="margin-bottom:0.85rem;">
+        <div class="offer-progress__labels">
+          <span>{{ settings.progress_tier_1_label }}</span>
+          <span>{{ settings.progress_tier_2_label }}</span>
+          <span>{{ settings.progress_tier_3_label }}</span>
+        </div>
+        <div class="offer-progress__track"><div class="offer-progress__fill" data-progress-fill style="width:0%"></div></div>
+        <p class="offer-progress__msg muted" data-progress-msg>Add more to unlock rewards</p>
+      </div>
+    {%- endif -%}
     <div style="display:flex;justify-content:space-between;margin-bottom:0.85rem;">
       <span>{{ 'cart.general.subtotal' | t }}</span>
       <strong data-cart-subtotal>{{ cart.total_price | money }}</strong>

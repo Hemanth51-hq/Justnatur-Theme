@@ -4,16 +4,26 @@
   "sections": {
     "announcement-bar": {
       "type": "announcement-bar",
+      "blocks": {
+        "a1": { "type": "message", "settings": { "text": "Free Express Shipping On All Orders" } },
+        "a2": { "type": "message", "settings": { "text": "COD Available Across India" } },
+        "a3": { "type": "message", "settings": { "text": "Trusted by 10,000+ People" } },
+        "a4": { "type": "message", "settings": { "text": "100% Clean & Ayurvedic Ingredients" } },
+        "a5": { "type": "message", "settings": { "text": "Secure Payments · UPI · Cards · Netbanking" } }
+      },
+      "block_order": ["a1", "a2", "a3", "a4", "a5"],
       "settings": {
         "enable": true,
-        "text": "Free express shipping on all orders · Clinically backed. 100% natural."
+        "rotate": true,
+        "interval": 4
       }
     },
     "header": {
       "type": "header",
       "settings": {
         "menu": "main-menu",
-        "show_search": true
+        "show_search": true,
+        "transparent_on_home": true
       }
     }
   },
