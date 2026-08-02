@@ -1,0 +1,96 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "eyebrow": "100% clean · clinically proven · from within",
+        "brand_line": "Just",
+        "brand_accent": "Natur",
+        "heading": "Hair fall doesn’t start on the scalp. It starts inside.",
+        "text": "Kesha Mula rebuilds the root with clean botanical nutrition — so strength returns where growth begins.",
+        "button_label": "Shop Kesha Mula",
+        "secondary_label": "Explore the ritual",
+        "min_height": 92
+      }
+    },
+    "marquee": {
+      "type": "trust-marquee",
+      "blocks": {
+        "i1": { "type": "item", "settings": { "text": "Clinically Proven" } },
+        "i2": { "type": "item", "settings": { "text": "100% Natural Ingredients" } },
+        "i3": { "type": "item", "settings": { "text": "No Preservatives" } },
+        "i4": { "type": "item", "settings": { "text": "Heavy Metal Tested" } },
+        "i5": { "type": "item", "settings": { "text": "Backed by Nutrition Science" } },
+        "i6": { "type": "item", "settings": { "text": "Visible Results in Weeks" } }
+      },
+      "block_order": ["i1", "i2", "i3", "i4", "i5", "i6"],
+      "settings": {
+        "enable": true
+      }
+    },
+    "promise": {
+      "type": "rich-text",
+      "settings": {
+        "soft_bg": true,
+        "narrow": true,
+        "eyebrow": "Our promise",
+        "heading": "We don’t coat your hair. We rebuild it — strand by strand.",
+        "text": "<p>Shampoos and oils care for the shaft. JustNatur feeds the root with clean, clinically minded botanicals.</p>"
+      }
+    },
+    "story": {
+      "type": "image-with-text",
+      "settings": {
+        "eyebrow": "Inside-out care",
+        "heading": "3 out of 4 women face visible hair thinning — and it’s not your shampoo’s fault.",
+        "text": "<p>Hair fall usually starts internally — triggered by stress, poor nutrition, and lifestyle imbalance. Real recovery begins when the body gets the right nutrients.</p>",
+        "button_label": "Shop Kesha Mula",
+        "reverse": false
+      }
+    },
+    "featured": {
+      "type": "featured-collection",
+      "settings": {
+        "eyebrow": "Shop the ritual",
+        "heading": "Clean nutrition for stronger roots",
+        "text": "Start with Kesha Mula, or build your inside-out routine.",
+        "products_to_show": 3,
+        "button_label": "View all"
+      }
+    },
+    "benefits": {
+      "type": "product-benefits",
+      "blocks": {
+        "b1": { "type": "benefit", "settings": { "title": "Less fall", "text": "Supports a calmer shedding cycle from within." } },
+        "b2": { "type": "benefit", "settings": { "title": "Stronger roots", "text": "Feeds the follicle with botanical nutrition." } },
+        "b3": { "type": "benefit", "settings": { "title": "Visible density", "text": "Helps hair feel fuller as the cycle stabilizes." } },
+        "b4": { "type": "benefit", "settings": { "title": "Daily ease", "text": "One scoop. Warm water. A repeatable ritual." } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4"],
+      "settings": {
+        "eyebrow": "What changes",
+        "heading": "A better day often begins with a stronger root rhythm.",
+        "text": "Not a harsh overnight fix. A gentle daily habit for clearer, denser-feeling hair.",
+        "chips": "Whole-herb support · Caffeine-free · No bitter powders · No harsh stimulants"
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "eyebrow": "Stay close",
+        "heading": "Join the root ritual",
+        "text": "Notes on internal hair nutrition, rituals, and clean formulas — once a week.",
+        "button_label": "Subscribe"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "marquee",
+    "promise",
+    "story",
+    "featured",
+    "benefits",
+    "newsletter"
+  ]
+}

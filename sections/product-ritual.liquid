@@ -1,0 +1,87 @@
+<section class="section section--ink">
+  <div class="page-width">
+    <div class="reveal" style="max-width:40rem;">
+      <p class="eyebrow" style="color:#9fd6b8;">{{ section.settings.eyebrow }}</p>
+      <h2 class="display">{{ section.settings.heading }}</h2>
+      {%- if section.settings.text != blank -%}
+        <p class="lede" style="color:rgba(244,247,243,0.78);">{{ section.settings.text }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="ritual-steps">
+      {%- for block in section.blocks -%}
+        <article class="ritual-step reveal" {{ block.shopify_attributes }} style="transition-delay: {{ forloop.index0 | times: 0.08 }}s;">
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.text }}</p>
+        </article>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.note != blank -%}
+      <p class="muted reveal" style="margin-top:1.75rem;font-size:0.85rem;color:rgba(244,247,243,0.6);max-width:42rem;">{{ section.settings.note }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Nightly ritual",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The nightly ritual"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "A simple night habit. A more natural morning."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "1 scoop to begin · Warm water · Stay consistent"
+    },
+    {
+      "type": "textarea",
+      "id": "note",
+      "label": "Note",
+      "default": "No bitter powder chaos. No measuring rituals. Just one clear nightly cue."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Start with one"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "One scoop before bed for the first week."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Nightly ritual",
+      "blocks": [
+        { "type": "step", "settings": { "title": "Start with one", "text": "One scoop before bed for the first week." } },
+        { "type": "step", "settings": { "title": "Use warm water", "text": "Stir into a full glass and drink slowly." } },
+        { "type": "step", "settings": { "title": "Keep it nightly", "text": "Consistency matters more than intensity." } },
+        { "type": "step", "settings": { "title": "Stay with it", "text": "Give the cycle 4–8 weeks to show up." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

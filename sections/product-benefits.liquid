@@ -1,0 +1,93 @@
+<section class="section section--surface">
+  <div class="page-width">
+    <div class="reveal" style="max-width:42rem;margin-bottom:1.5rem;">
+      <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 class="display">{{ section.settings.heading }}</h2>
+      {%- if section.settings.text != blank -%}
+        <p class="lede">{{ section.settings.text }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="benefit-grid">
+      {%- for block in section.blocks -%}
+        <article class="benefit reveal" {{ block.shopify_attributes }} style="transition-delay: {{ forloop.index0 | times: 0.08 }}s;">
+          <h3 class="benefit__title">{{ block.settings.title }}</h3>
+          <p class="benefit__text">{{ block.settings.text }}</p>
+        </article>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.chips != blank -%}
+      <div class="chip-row reveal">
+        {%- assign chips = section.settings.chips | split: '|' -%}
+        {%- for chip in chips -%}
+          <span class="chip">{{ chip | strip }}</span>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product benefits",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Where the difference begins"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "A better day often begins with a stronger root rhythm."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Supporting text",
+      "default": "Not a harsh overnight fix. A gentle daily habit for clearer, denser-feeling hair."
+    },
+    {
+      "type": "text",
+      "id": "chips",
+      "label": "Chips",
+      "default": "Whole-herb support · Caffeine-free · No bitter powders · No harsh stimulants",
+      "info": "Separate with |"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Less fall"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Supports a calmer shedding cycle from within."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product benefits",
+      "blocks": [
+        { "type": "benefit", "settings": { "title": "Less fall", "text": "Supports a calmer shedding cycle from within." } },
+        { "type": "benefit", "settings": { "title": "Stronger roots", "text": "Feeds the follicle with botanical nutrition." } },
+        { "type": "benefit", "settings": { "title": "Visible density", "text": "Helps hair feel fuller as the cycle stabilizes." } },
+        { "type": "benefit", "settings": { "title": "Daily ease", "text": "One scoop. Warm water. A repeatable ritual." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

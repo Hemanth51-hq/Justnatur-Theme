@@ -1,0 +1,39 @@
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "about": {
+          "type": "text",
+          "settings": {
+            "heading": "JustNatur",
+            "text": "<p>Clean, science-backed nutrition for hair that grows from within. No coatings. No shortcuts. Just nature, done properly.</p>"
+          }
+        },
+        "shop": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Shop",
+            "menu": "footer"
+          }
+        },
+        "help": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Help",
+            "menu": "footer"
+          }
+        }
+      },
+      "block_order": ["about", "shop", "help"],
+      "settings": {
+        "show_newsletter": true,
+        "newsletter_heading": "Join the root ritual",
+        "newsletter_text": "Weekly notes on internal hair nutrition — no spam, just clarity."
+      }
+    }
+  },
+  "order": ["footer"]
+}

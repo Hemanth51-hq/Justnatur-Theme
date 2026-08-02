@@ -1,0 +1,161 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "trust1": {
+          "type": "trust",
+          "settings": {
+            "icon": "truck",
+            "title": "Delivery within India",
+            "text": "Same-day dispatch · Free pan-India delivery · 3–5 business days"
+          }
+        },
+        "trust2": {
+          "type": "trust",
+          "settings": {
+            "icon": "shield",
+            "title": "Secure checkout",
+            "text": "Protected payments · Prepaid discount available"
+          }
+        },
+        "trust3": {
+          "type": "trust",
+          "settings": {
+            "icon": "leaf",
+            "title": "Clean formula",
+            "text": "100% natural · No preservatives · Food-grade herbs"
+          }
+        },
+        "trust4": {
+          "type": "trust",
+          "settings": {
+            "icon": "star",
+            "title": "Results people feel",
+            "text": "Trusted by 25,000+ women for hair health"
+          }
+        }
+      },
+      "block_order": ["trust1", "trust2", "trust3", "trust4"],
+      "settings": {
+        "kicker": "FROM WITHIN | NOT TOPICAL | NO EMPTY CLAIMS",
+        "show_rating": true,
+        "rating_text": "4.6/5 · Based on 151 reviews",
+        "promise_text": "5× Less Hair Fall | 3× Stronger Roots | 2× Visible Regrowth | Clinically Proven",
+        "pack_heading": "Choose your hair transformation pack",
+        "pack_1_title": "Trail Pack · 15 Days",
+        "pack_1_meta": "1 pouch · Start the root ritual",
+        "pack_2_title": "Value Pack · Any 2",
+        "pack_2_meta": "Select your combo",
+        "pack_2_badge": "Most chosen",
+        "pack_3_title": "Best Deal · Any 3",
+        "pack_3_meta": "Select your combo",
+        "pack_3_badge": "Best value",
+        "sibling_1": "Kesha Amrith Hair Oil",
+        "sibling_2": "Kesha Combo"
+      }
+    },
+    "story": {
+      "type": "product-story",
+      "blocks": {
+        "s1": { "type": "stat", "settings": { "value": "14", "label": "Botanicals", "description": "Whole-herb formula" } },
+        "s2": { "type": "stat", "settings": { "value": "1 scoop", "label": "Daily ritual", "description": "No measuring stress" } },
+        "s3": { "type": "stat", "settings": { "value": "4 wks", "label": "Visible shift", "description": "Less fall, denser feel" } },
+        "s4": { "type": "stat", "settings": { "value": "100%", "label": "Natural", "description": "No preservatives" } }
+      },
+      "block_order": ["s1", "s2", "s3", "s4"],
+      "settings": {
+        "soft_bg": false,
+        "eyebrow": "Ayurveda’s root ritual",
+        "heading": "When roots weaken, everything feels thinner.",
+        "text": "<p>Kesha Mula brings whole botanicals together to support the body’s natural hair nutrition — so strength returns where growth begins.</p>"
+      }
+    },
+    "benefits": {
+      "type": "product-benefits",
+      "blocks": {
+        "b1": { "type": "benefit", "settings": { "title": "Less fall", "text": "Supports a calmer shedding cycle from within." } },
+        "b2": { "type": "benefit", "settings": { "title": "Stronger roots", "text": "Feeds the follicle with botanical nutrition." } },
+        "b3": { "type": "benefit", "settings": { "title": "Visible density", "text": "Helps hair feel fuller as the cycle stabilizes." } },
+        "b4": { "type": "benefit", "settings": { "title": "Daily ease", "text": "One scoop. Warm water. A repeatable ritual." } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4"],
+      "settings": {}
+    },
+    "audience": {
+      "type": "product-audience",
+      "blocks": {
+        "a1": { "type": "audience", "settings": { "tag": "After wash", "title": "Feels thinner", "text": "When hair seems to sit flatter and look less full than before." } },
+        "a2": { "type": "audience", "settings": { "tag": "Stress weeks", "title": "Routine is irregular", "text": "When sleep, diet, and stress start showing up in the part line." } },
+        "a3": { "type": "audience", "settings": { "tag": "Postpartum", "title": "Cycle feels off", "text": "When the body’s timing needs gentler nutritional support." } },
+        "a4": { "type": "audience", "settings": { "tag": "Daily care", "title": "Wants clean support", "text": "Without harsh stimulants or another empty topical promise." } }
+      },
+      "block_order": ["a1", "a2", "a3", "a4"],
+      "settings": {}
+    },
+    "ritual": {
+      "type": "product-ritual",
+      "blocks": {
+        "r1": { "type": "step", "settings": { "title": "Start with one", "text": "One scoop before bed for the first week." } },
+        "r2": { "type": "step", "settings": { "title": "Use warm water", "text": "Stir into a full glass and drink slowly." } },
+        "r3": { "type": "step", "settings": { "title": "Keep it nightly", "text": "Consistency matters more than intensity." } },
+        "r4": { "type": "step", "settings": { "title": "Stay with it", "text": "Give the cycle 4–8 weeks to show up." } }
+      },
+      "block_order": ["r1", "r2", "r3", "r4"],
+      "settings": {}
+    },
+    "reviews": {
+      "type": "product-reviews",
+      "blocks": {
+        "rev1": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Less fall in weeks",
+            "body": "I noticed less hair on my pillow within a few weeks. The ritual is easy and the ingredients feel clean.",
+            "author": "Ananya"
+          }
+        },
+        "rev2": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Finally something internal",
+            "body": "Oils never fixed my shedding. Kesha Mula feels like the first product that addresses the root cause properly.",
+            "author": "Meera"
+          }
+        },
+        "rev3": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Hair feels denser",
+            "body": "After a month my parting looks softer and my hair feels stronger when I wash it. Packaging and taste are both thoughtful.",
+            "author": "Ritika"
+          }
+        }
+      },
+      "block_order": ["rev1", "rev2", "rev3"],
+      "settings": {}
+    },
+    "related": {
+      "type": "featured-collection",
+      "settings": {
+        "eyebrow": "Sibling products",
+        "heading": "Build your inside-out ritual",
+        "text": "Pair Kesha Mula with complementary JustNatur care.",
+        "products_to_show": 3,
+        "button_label": "Shop all"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "story",
+    "benefits",
+    "audience",
+    "ritual",
+    "reviews",
+    "related"
+  ]
+}

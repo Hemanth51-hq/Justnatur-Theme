@@ -1,0 +1,127 @@
+<footer class="footer">
+  <div class="page-width footer__grid">
+    {%- for block in section.blocks -%}
+      <div {{ block.shopify_attributes }}>
+        {%- case block.type -%}
+          {%- when 'text' -%}
+            <div class="footer__brand">Just<span>Natur</span></div>
+            {%- if block.settings.heading != blank and block.settings.heading != 'JustNatur' -%}
+              <h3>{{ block.settings.heading }}</h3>
+            {%- endif -%}
+            <div class="rte muted">{{ block.settings.text }}</div>
+          {%- when 'link_list' -%}
+            <h3>{{ block.settings.heading }}</h3>
+            <div class="footer__links">
+              {%- if block.settings.menu != blank -%}
+                {%- for link in block.settings.menu.links -%}
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                {%- endfor -%}
+              {%- else -%}
+                <a href="{{ routes.all_products_collection_url }}">All products</a>
+                <a href="/pages/contact">Contact</a>
+                <a href="/policies/shipping-policy">Shipping</a>
+                <a href="/policies/refund-policy">Returns</a>
+              {%- endif -%}
+            </div>
+        {%- endcase -%}
+      </div>
+    {%- endfor -%}
+
+    {%- if section.settings.show_newsletter -%}
+      <div>
+        <h3>{{ section.settings.newsletter_heading }}</h3>
+        <p class="muted">{{ section.settings.newsletter_text }}</p>
+        {% form 'customer', class: 'newsletter-form' %}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <input
+            type="email"
+            name="contact[email]"
+            placeholder="Email address"
+            required
+            autocomplete="email"
+            aria-label="Email"
+          >
+          <button class="btn btn--primary" type="submit">Join</button>
+        {% endform %}
+      </div>
+    {%- endif -%}
+  </div>
+
+  <div class="page-width footer__bottom">
+    <span>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</span>
+    <span>{{ settings.brand_tagline }}</span>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_newsletter",
+      "label": "Show newsletter",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "newsletter_heading",
+      "label": "Newsletter heading",
+      "default": "Join the root ritual"
+    },
+    {
+      "type": "textarea",
+      "id": "newsletter_text",
+      "label": "Newsletter text",
+      "default": "Weekly notes on internal hair nutrition — no spam, just clarity."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "JustNatur"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Clean, science-backed nutrition for hair that grows from within.</p>"
+        }
+      ]
+    },
+    {
+      "type": "link_list",
+      "name": "Menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Quick links"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "text"
+      },
+      {
+        "type": "link_list"
+      }
+    ]
+  }
+}
+{% endschema %}

@@ -1,0 +1,26 @@
+<div
+  class="cart-drawer"
+  data-cart-drawer
+  data-empty-message="{{ settings.cart_empty_message | escape }}"
+  aria-hidden="true"
+>
+  <div class="cart-drawer__header">
+    <strong>{{ 'cart.general.title' | t }}</strong>
+    <button type="button" class="icon-btn" data-cart-close aria-label="{{ 'general.accessibility.close' | t }}">
+      {% render 'icon', icon: 'close' %}
+    </button>
+  </div>
+  <div class="cart-drawer__body" data-cart-body>
+    <div class="cart-empty">
+      <p>{{ settings.cart_empty_message }}</p>
+    </div>
+  </div>
+  <div class="cart-drawer__footer">
+    <div style="display:flex;justify-content:space-between;margin-bottom:0.85rem;">
+      <span>{{ 'cart.general.subtotal' | t }}</span>
+      <strong data-cart-subtotal>{{ cart.total_price | money }}</strong>
+    </div>
+    <p class="muted" style="font-size:0.8rem;margin-bottom:0.9rem;">{{ 'cart.general.taxes_shipping' | t }}</p>
+    <a class="btn btn--primary btn--full" href="{{ routes.cart_url }}">{{ 'cart.general.checkout' | t }}</a>
+  </div>
+</div>

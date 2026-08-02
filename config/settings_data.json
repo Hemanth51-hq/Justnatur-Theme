@@ -1,0 +1,70 @@
+{
+  "current": {
+    "logo_width": 148,
+    "brand_tagline": "Clean nutrition. Stronger roots.",
+    "color_background": "#FAFAF7",
+    "color_surface": "#FFFFFF",
+    "color_text": "#1A1C19",
+    "color_text_muted": "#5C6358",
+    "color_accent": "#1F6B4F",
+    "color_accent_soft": "#E7F2EC",
+    "color_highlight": "#C45C26",
+    "color_border": "#D9DED6",
+    "type_scale": 100,
+    "cart_drawer_enabled": true,
+    "cart_empty_message": "Your cart is waiting for cleaner nutrition.",
+    "show_vendor": false,
+    "enable_sticky_atc": true,
+    "social_instagram": "https://www.instagram.com/",
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "enable": true,
+          "text": "Free express shipping on all orders · Clinically backed. 100% natural.",
+          "link": ""
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "menu": "main-menu",
+          "show_search": true
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "about": {
+            "type": "text",
+            "settings": {
+              "heading": "JustNatur",
+              "text": "<p>Clean, science-backed nutrition for hair that grows from within. No coatings. No shortcuts. Just nature, done properly.</p>"
+            }
+          },
+          "shop": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Shop",
+              "menu": "footer"
+            }
+          },
+          "help": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Help",
+              "menu": "footer"
+            }
+          }
+        },
+        "block_order": ["about", "shop", "help"],
+        "settings": {
+          "show_newsletter": true,
+          "newsletter_heading": "Join the root ritual",
+          "newsletter_text": "Weekly notes on internal hair nutrition — no spam, just clarity."
+        }
+      }
+    },
+    "content_for_index": []
+  }
+}

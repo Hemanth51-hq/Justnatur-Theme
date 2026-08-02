@@ -1,0 +1,31 @@
+<section class="collection-banner">
+  <div class="page-width">
+    <p class="eyebrow">{{ section.settings.eyebrow | default: 'Collection' }}</p>
+    <h1 class="display">{{ collection.title }}</h1>
+    {%- if collection.description != blank -%}
+      <div class="lede rte">{{ collection.description }}</div>
+    {%- elsif section.settings.text != blank -%}
+      <p class="lede">{{ section.settings.text }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Shop"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Fallback text",
+      "default": "Clean botanicals for hair that grows from within."
+    }
+  ]
+}
+{% endschema %}

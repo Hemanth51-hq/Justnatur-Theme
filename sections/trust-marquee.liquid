@@ -1,0 +1,61 @@
+{%- if section.settings.enable -%}
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>
+        {%- for block in section.blocks -%}
+          {{ block.settings.text }}
+        {%- else -%}
+          Clinically Proven · 100% Natural · No Preservatives · Heavy Metal Tested · Visible Results in Weeks · Root Nutrition
+        {%- endfor -%}
+      </span>
+      <span>
+        {%- for block in section.blocks -%}
+          {{ block.settings.text }}
+        {%- else -%}
+          Clinically Proven · 100% Natural · No Preservatives · Heavy Metal Tested · Visible Results in Weeks · Root Nutrition
+        {%- endfor -%}
+      </span>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Trust marquee",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable",
+      "label": "Enable",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "100% Natural Ingredients"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trust marquee",
+      "blocks": [
+        { "type": "item", "settings": { "text": "Clinically Proven" } },
+        { "type": "item", "settings": { "text": "100% Natural Ingredients" } },
+        { "type": "item", "settings": { "text": "No Preservatives" } },
+        { "type": "item", "settings": { "text": "Heavy Metal Tested" } },
+        { "type": "item", "settings": { "text": "Backed by Nutrition Science" } },
+        { "type": "item", "settings": { "text": "Visible Results in Weeks" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,30 @@
+{%- comment -%}
+  Product card snippet for collection grids and featured sections.
+{%- endcomment -%}
+{%- if product != blank -%}
+  {%- liquid
+    assign alt_text = product.featured_media.alt | default: product.title
+  -%}
+  <a class="product-card reveal" href="{{ product.url }}">
+    <div class="product-card__media">
+      {%- if product.featured_media -%}
+        {{
+          product.featured_media
+          | image_url: width: 900
+          | image_tag: loading: 'lazy', widths: '320,480,720,900', sizes: '(min-width: 900px) 33vw, 50vw', alt: alt_text
+        }}
+      {%- else -%}
+        {{ 'product-1' | placeholder_svg_tag }}
+      {%- endif -%}
+    </div>
+    <div class="product-card__body">
+      <h3 class="product-card__title">{{ product.title }}</h3>
+      <div class="product-card__meta">
+        {% render 'price', product: product, use_variant: true %}
+        {%- if product.available == false -%}
+          <span class="badge">Sold out</span>
+        {%- endif -%}
+      </div>
+    </div>
+  </a>
+{%- endif -%}

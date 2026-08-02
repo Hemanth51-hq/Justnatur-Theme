@@ -1,0 +1,164 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "JustNatur",
+    "theme_version": "1.0.0",
+    "theme_author": "JustNatur",
+    "theme_documentation_url": "https://www.justnatur.in",
+    "theme_support_url": "https://www.justnatur.in"
+  },
+  {
+    "name": "Brand",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      },
+      {
+        "type": "range",
+        "id": "logo_width",
+        "min": 80,
+        "max": 220,
+        "step": 4,
+        "unit": "px",
+        "label": "Logo width",
+        "default": 148
+      },
+      {
+        "type": "text",
+        "id": "brand_tagline",
+        "label": "Brand tagline",
+        "default": "Clean nutrition. Stronger roots."
+      }
+    ]
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_background",
+        "label": "Background",
+        "default": "#FAFAF7"
+      },
+      {
+        "type": "color",
+        "id": "color_surface",
+        "label": "Surface",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Text",
+        "default": "#1A1C19"
+      },
+      {
+        "type": "color",
+        "id": "color_text_muted",
+        "label": "Muted text",
+        "default": "#5C6358"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Accent",
+        "default": "#1F6B4F"
+      },
+      {
+        "type": "color",
+        "id": "color_accent_soft",
+        "label": "Soft accent",
+        "default": "#E7F2EC"
+      },
+      {
+        "type": "color",
+        "id": "color_highlight",
+        "label": "Highlight",
+        "default": "#C45C26"
+      },
+      {
+        "type": "color",
+        "id": "color_border",
+        "label": "Border",
+        "default": "#D9DED6"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "range",
+        "id": "type_scale",
+        "min": 90,
+        "max": 120,
+        "step": 1,
+        "unit": "%",
+        "label": "Type scale",
+        "default": 100
+      }
+    ]
+  },
+  {
+    "name": "Social",
+    "settings": [
+      {
+        "type": "text",
+        "id": "social_instagram",
+        "label": "Instagram URL"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook",
+        "label": "Facebook URL"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube",
+        "label": "YouTube URL"
+      },
+      {
+        "type": "text",
+        "id": "social_whatsapp",
+        "label": "WhatsApp number",
+        "info": "Include country code, e.g. 919876543210"
+      }
+    ]
+  },
+  {
+    "name": "Cart",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "cart_drawer_enabled",
+        "label": "Enable cart drawer",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "cart_empty_message",
+        "label": "Empty cart message",
+        "default": "Your cart is waiting for cleaner nutrition."
+      }
+    ]
+  },
+  {
+    "name": "Product defaults",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_vendor",
+        "label": "Show vendor",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_sticky_atc",
+        "label": "Enable sticky add to cart",
+        "default": true
+      }
+    ]
+  }
+]

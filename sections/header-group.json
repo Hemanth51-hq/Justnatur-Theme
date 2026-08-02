@@ -1,0 +1,21 @@
+{
+  "type": "header",
+  "name": "Header group",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "settings": {
+        "enable": true,
+        "text": "Free express shipping on all orders · Clinically backed. 100% natural."
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "menu": "main-menu",
+        "show_search": true
+      }
+    }
+  },
+  "order": ["announcement-bar", "header"]
+}

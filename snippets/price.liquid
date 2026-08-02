@@ -1,0 +1,24 @@
+{%- liquid
+  assign target = product
+  if product == blank and variant != blank
+    assign target = variant
+  endif
+  if use_variant and product.selected_or_first_available_variant
+    assign target = product.selected_or_first_available_variant
+  endif
+
+  assign compare_at = target.compare_at_price
+  assign price = target.price
+-%}
+
+<div class="price">
+  <span class="price__regular" {% if price_attr %}{{ price_attr }}{% endif %}>
+    {{ price | money }}
+  </span>
+  {%- if compare_at > price -%}
+    <span class="price__compare" {% if compare_attr %}{{ compare_attr }}{% endif %}>{{ compare_at | money }}</span>
+    <span class="price__save">Save {{ compare_at | minus: price | times: 100.0 | divided_by: compare_at | round }}%</span>
+  {%- elsif compare_attr -%}
+    <span class="price__compare" {{ compare_attr }} hidden></span>
+  {%- endif -%}
+</div>

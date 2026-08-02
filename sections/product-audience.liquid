@@ -1,0 +1,96 @@
+<section class="section">
+  <div class="page-width">
+    <div class="reveal" style="max-width:40rem;">
+      <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 class="display">{{ section.settings.heading }}</h2>
+      {%- if section.settings.text != blank -%}
+        <p class="lede">{{ section.settings.text }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="audience-grid">
+      {%- for block in section.blocks -%}
+        <article class="audience-card reveal" {{ block.shopify_attributes }}>
+          <div class="audience-card__tag">{{ block.settings.tag }}</div>
+          <div>
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.text }}</p>
+          </div>
+        </article>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.disclaimer != blank -%}
+      <p class="muted reveal" style="margin-top:1.75rem;font-size:0.85rem;max-width:46rem;">{{ section.settings.disclaimer }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Who it is for",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Who it is for"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "For anyone tired of saying, “My hair is just like this.”"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "For yourself, your partner, your mother — anyone ready for a gentler, internal approach."
+    },
+    {
+      "type": "textarea",
+      "id": "disclaimer",
+      "label": "Disclaimer",
+      "default": "Check with a healthcare professional if pregnant, breastfeeding, under medication, or managing a medical condition."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "audience",
+      "name": "Audience",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "Tag",
+          "default": "Daily care"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Notices more fall"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "When the brush and pillow keep collecting more than they used to."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Who it is for",
+      "blocks": [
+        { "type": "audience", "settings": { "tag": "After wash", "title": "Feels thinner", "text": "When hair seems to sit flatter and look less full than before." } },
+        { "type": "audience", "settings": { "tag": "Stress weeks", "title": "Routine is irregular", "text": "When sleep, diet, and stress start showing up in the part line." } },
+        { "type": "audience", "settings": { "tag": "Postpartum", "title": "Cycle feels off", "text": "When the body’s timing needs gentler nutritional support." } },
+        { "type": "audience", "settings": { "tag": "Daily care", "title": "Wants clean support", "text": "Without harsh stimulants or another empty topical promise." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

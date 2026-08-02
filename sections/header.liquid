@@ -1,0 +1,83 @@
+<div class="header-wrapper">
+  <header class="header page-width">
+    <button
+      type="button"
+      class="icon-btn mobile-nav-toggle"
+      data-nav-toggle
+      aria-expanded="false"
+      aria-controls="MobileNav"
+      aria-label="{{ 'general.accessibility.menu' | t }}"
+    >
+      {% render 'icon', icon: 'menu' %}
+    </button>
+
+    <nav class="header__nav" aria-label="Primary">
+      {%- if section.settings.menu != blank -%}
+        {%- for link in section.settings.menu.links -%}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        {%- endfor -%}
+      {%- else -%}
+        <a href="{{ routes.all_products_collection_url }}">Shop</a>
+        <a href="/pages/about">Our Story</a>
+        <a href="/pages/science">Science</a>
+      {%- endif -%}
+    </nav>
+
+    <a class="header__logo" href="{{ routes.root_url }}">
+      {%- if settings.logo != blank -%}
+        {{ settings.logo | image_url: width: settings.logo_width | image_tag: alt: shop.name, loading: 'eager' }}
+      {%- else -%}
+        <div class="header__logo-text">Just<span>Natur</span></div>
+      {%- endif -%}
+    </a>
+
+    <div class="header__actions">
+      {%- if section.settings.show_search -%}
+        <a class="icon-btn" href="{{ routes.search_url }}" aria-label="{{ 'general.accessibility.search' | t }}">
+          {% render 'icon', icon: 'search' %}
+        </a>
+      {%- endif -%}
+      <a
+        class="icon-btn"
+        href="{{ routes.cart_url }}"
+        data-cart-open
+        aria-label="{{ 'general.accessibility.cart' | t }}"
+      >
+        {% render 'icon', icon: 'cart' %}
+        <span class="cart-count" data-cart-count {% if cart.item_count == 0 %}hidden{% endif %}>{{ cart.item_count }}</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="mobile-nav page-width" id="MobileNav" data-mobile-nav>
+    {%- if section.settings.menu != blank -%}
+      {%- for link in section.settings.menu.links -%}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      {%- endfor -%}
+    {%- else -%}
+      <a href="{{ routes.all_products_collection_url }}">Shop</a>
+      <a href="/pages/about">Our Story</a>
+      <a href="/pages/science">Science</a>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_search",
+      "label": "Show search",
+      "default": true
+    }
+  ]
+}
+{% endschema %}
