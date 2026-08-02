@@ -141,7 +141,10 @@
             "quote": "I was losing a lot of hair while combing and washing. After using Kesha Mula consistently for 3\u20134 weeks, the hair fall reduced a lot. Now I\u2019ve reordered for the next 2 months.",
             "results": "Hair fall reduced during wash | Scalp feels healthier | Hair feels stronger",
             "author": "Anusha R.",
-            "verified": true
+            "verified": true,
+            "age": "Age 30",
+            "concern": "Hair fall",
+            "duration": "Used 60 days"
           }
         },
         "ba2": {
@@ -153,7 +156,10 @@
             "quote": "After delivery, my hair fall increased a lot due to stress and weakness. Kesha Mula felt gentle and natural. My hair fall has reduced slowly and my energy levels feel better too.",
             "results": "Stress-related fall improved | Better digestion | No side effects",
             "author": "Swathi M.",
-            "verified": true
+            "verified": true,
+            "age": "Age 30",
+            "concern": "Hair fall",
+            "duration": "Used 60 days"
           }
         },
         "ba3": {
@@ -165,7 +171,10 @@
             "quote": "My hair was becoming very thin, especially near the front. After three months, my hair feels thicker and more manageable. I\u2019m continuing for 90 days more.",
             "results": "Less thinning at the crown | Hair feels thicker | Easy daily routine",
             "author": "Kavitha S.",
-            "verified": true
+            "verified": true,
+            "age": "Age 30",
+            "concern": "Hair fall",
+            "duration": "Used 60 days"
           }
         }
       },
@@ -317,12 +326,12 @@
         "r8"
       ],
       "settings": {
-        "eyebrow": "Why JustNatur",
-        "heading": "Why should I trust this over what I already use?",
+        "eyebrow": "The difference",
+        "heading": "Why this isn\u2019t another oil or gummy.",
         "text": "Oils and serums target the symptom. Kesha Mula targets the root cause \u2014 with clean, clinically minded botanicals.",
         "col_feature": "What matters",
-        "col_other_1": "Oils & shampoos",
-        "col_other_2": "Typical hair gummies",
+        "col_other_1": "Hair oils",
+        "col_other_2": "Biotin gummies",
         "col_ours": "Kesha Mula"
       }
     },
@@ -733,7 +742,14 @@
     },
     "founder": {
       "type": "founder-story",
-      "settings": {}
+      "settings": {
+        "eyebrow": "A note from the founder",
+        "heading": "We didn\u2019t build another oil. We built a root ritual.",
+        "letter": "If your brush keeps collecting more than it should, the answer is rarely another coating. Hair fall begins inside \u2014 in stress, nutrition gaps, and a cycle that needs gentle consistency.",
+        "signature": "With roots,",
+        "founder_name": "Team JustNatur",
+        "founder_role": "Founders"
+      }
     }
   },
   "order": [

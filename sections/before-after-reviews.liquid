@@ -3,7 +3,7 @@
     <div class="reviews-header reveal">
       <div>
         <p class="eyebrow">{{ section.settings.eyebrow }}</p>
-        <h2 class="display" style="font-size:clamp(1.8rem,3.5vw,2.8rem);">{{ section.settings.heading }}</h2>
+        <h2 class="display">{{ section.settings.heading }}</h2>
         {%- if section.settings.text != blank -%}
           <p class="lede">{{ section.settings.text }}</p>
         {%- endif -%}
@@ -13,7 +13,7 @@
 
     <div class="ba-grid">
       {%- for block in section.blocks -%}
-        <article class="ba-card reveal" {{ block.shopify_attributes }} style="transition-delay: {{ forloop.index0 | times: 0.08 }}s;">
+        <article class="ba-card reveal" {{ block.shopify_attributes }}>
           <div class="ba-card__images">
             <div class="ba-shot">
               <span class="ba-shot__label">Before</span>
@@ -47,10 +47,21 @@
 
           <div class="ba-card__body">
             <div class="ba-card__meta">
-              <span class="stars" aria-hidden="true">★★★★★</span>
+              <span class="stars" aria-hidden="true">
+                {% render 'icon', icon: 'star', size: 14 %}
+                {% render 'icon', icon: 'star', size: 14 %}
+                {% render 'icon', icon: 'star', size: 14 %}
+                {% render 'icon', icon: 'star', size: 14 %}
+                {% render 'icon', icon: 'star', size: 14 %}
+              </span>
               <span>{{ block.settings.timeline }}</span>
             </div>
             <h3 class="ba-card__title">{{ block.settings.title }}</h3>
+            <div class="ba-card__profile">
+              {%- if block.settings.age != blank -%}<span class="ba-pill">{{ block.settings.age }}</span>{%- endif -%}
+              {%- if block.settings.concern != blank -%}<span class="ba-pill">{{ block.settings.concern }}</span>{%- endif -%}
+              {%- if block.settings.duration != blank -%}<span class="ba-pill">{{ block.settings.duration }}</span>{%- endif -%}
+            </div>
             <p class="ba-card__quote">“{{ block.settings.quote }}”</p>
             {%- if block.settings.results != blank -%}
               <div class="ba-card__results">
@@ -77,30 +88,20 @@
 {
   "name": "Before & after reviews",
   "settings": [
-    {
-      "type": "text",
-      "id": "eyebrow",
-      "label": "Eyebrow",
-      "default": "Real transformations"
-    },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Proof over promises" },
     {
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "We don’t coat your hair. We rebuild it — strand by strand."
+      "default": "Real roots. Real timelines."
     },
     {
       "type": "textarea",
       "id": "text",
       "label": "Text",
-      "default": "Thousands of people are rebuilding their roots with Kesha Mula every day."
+      "default": "Upload customer photos in the theme editor. Consistency is the product."
     },
-    {
-      "type": "text",
-      "id": "subheading",
-      "label": "Subheading",
-      "default": "Before → after results from consistent use"
-    }
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Verified journeys" }
   ],
   "blocks": [
     {
@@ -111,11 +112,14 @@
         { "type": "image_picker", "id": "after_image", "label": "After image" },
         { "type": "text", "id": "after_label", "label": "After label", "default": "After 8 Weeks" },
         { "type": "text", "id": "timeline", "label": "Timeline", "default": "8 weeks" },
-        { "type": "text", "id": "title", "label": "Title", "default": "I could see less hair fall while washing" },
-        { "type": "textarea", "id": "quote", "label": "Quote", "default": "After using Kesha Mula consistently for 3–4 weeks, the hair fall reduced a lot. It didn’t happen overnight, but I could clearly see the difference." },
-        { "type": "text", "id": "results", "label": "Result chips", "default": "Less hair on pillow | Stronger feel | Reordered", "info": "Separate with |" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Less hair on the pillow" },
+        { "type": "textarea", "id": "quote", "label": "Quote", "default": "After consistent use, shedding felt more controlled." },
+        { "type": "text", "id": "age", "label": "Age", "default": "Age 29" },
+        { "type": "text", "id": "concern", "label": "Hair concern", "default": "Stress fall" },
+        { "type": "text", "id": "duration", "label": "Duration used", "default": "Used 60 days" },
+        { "type": "text", "id": "results", "label": "Result chips", "default": "Less shedding | Stronger feel" },
         { "type": "text", "id": "author", "label": "Author", "default": "Anusha R." },
-        { "type": "checkbox", "id": "verified", "label": "Verified customer", "default": true }
+        { "type": "checkbox", "id": "verified", "label": "Verified", "default": true }
       ]
     }
   ],
@@ -128,9 +132,12 @@
           "settings": {
             "after_label": "After 8 Weeks",
             "timeline": "8 weeks",
-            "title": "I could see less hair fall while washing",
-            "quote": "I was losing a lot of hair while combing and washing. After using Kesha Mula consistently for 3–4 weeks, the hair fall reduced a lot. Now I’ve reordered for the next 2 months.",
-            "results": "Hair fall reduced during wash | Scalp feels healthier | Hair feels stronger",
+            "title": "Less hair while washing",
+            "quote": "After using Kesha Mula consistently for 3–4 weeks, the hair fall reduced a lot.",
+            "age": "Age 31",
+            "concern": "Wash-day fall",
+            "duration": "Used 8 weeks",
+            "results": "Less fall | Reordered",
             "author": "Anusha R."
           }
         },
@@ -139,9 +146,12 @@
           "settings": {
             "after_label": "After 8 Weeks",
             "timeline": "8 weeks",
-            "title": "Post-stress hair fall started settling",
-            "quote": "After delivery, my hair fall increased a lot due to stress and weakness. Kesha Mula felt gentle and natural. My hair fall has reduced slowly and my energy levels feel better too.",
-            "results": "Stress-related fall improved | Better digestion | No side effects",
+            "title": "Postpartum shedding eased",
+            "quote": "It felt gentle and natural. My hair fall reduced slowly without side effects.",
+            "age": "Age 28",
+            "concern": "Postpartum",
+            "duration": "Used 60 days",
+            "results": "Gentler fall | Better energy",
             "author": "Swathi M."
           }
         },
@@ -150,9 +160,12 @@
           "settings": {
             "after_label": "After 12 Weeks",
             "timeline": "12 weeks",
-            "title": "My hair looks less thin than before",
-            "quote": "My hair was becoming very thin, especially near the front. After three months, my hair feels thicker and more manageable. I’m continuing for 90 days more.",
-            "results": "Less thinning at the crown | Hair feels thicker | Easy daily routine",
+            "title": "Front hair looks fuller",
+            "quote": "After three months, my hair feels thicker and more manageable.",
+            "age": "Age 36",
+            "concern": "Thinning at front",
+            "duration": "Used 90 days",
+            "results": "Denser feel | Continuing",
             "author": "Kavitha S."
           }
         }

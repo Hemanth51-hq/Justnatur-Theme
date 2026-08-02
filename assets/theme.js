@@ -377,25 +377,61 @@
     });
   }
 
+  /* Scroll progress */
+  const progress = qs('[data-scroll-progress]');
+  if (progress) {
+    const updateProgressBar = () => {
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      const pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
+      progress.style.width = `${pct}%`;
+    };
+    updateProgressBar();
+    window.addEventListener('scroll', updateProgressBar, { passive: true });
+  }
+
   /* GSAP subtle motion */
   const initMotion = () => {
     if (!window.gsap) return;
     if (window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
+
     gsap.utils.toArray('.hero__content').forEach((el) => {
-      gsap.from(el, { y: 18, opacity: 0, duration: 0.55, ease: 'power2.out' });
+      gsap.from(el, { y: 22, opacity: 0, duration: 0.55, ease: 'power2.out' });
     });
-    gsap.utils.toArray('.pack-option, .benefit, .ingredient, .timeline-step').forEach((el) => {
+
+    gsap.utils.toArray('.mask-reveal').forEach((el) => {
+      gsap.to(el, {
+        clipPath: 'inset(0 0 0% 0)',
+        duration: 0.6,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 85%' }
+      });
+      el.style.clipPath = 'inset(0 0 100% 0)';
+    });
+
+    gsap.utils.toArray('.product-gallery__main img, .float-media').forEach((el) => {
+      gsap.to(el, {
+        y: -8,
+        duration: 2.8,
+        yoyo: true,
+        repeat: -1,
+        ease: 'sine.inOut'
+      });
+    });
+
+    gsap.utils.toArray('.pack-option, .ingredient, .ba-card, .timeline-step').forEach((el, i) => {
       gsap.from(el, {
         scrollTrigger: { trigger: el, start: 'top 90%' },
-        y: 16,
+        y: 18,
         opacity: 0,
         duration: 0.45,
+        delay: Math.min(i * 0.03, 0.18),
         ease: 'power2.out'
       });
     });
   };
   if (window.gsap) initMotion();
-  else window.addEventListener('load', () => setTimeout(initMotion, 50));
+  else window.addEventListener('load', () => setTimeout(initMotion, 40));
 
   /* Init cart */
   fetch('/cart.js')

@@ -3,126 +3,179 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "eyebrow": "100% clean · clinically proven · from within",
+        "eyebrow": "Modern Ayurveda · Clinically minded · From within",
         "brand_line": "Just",
         "brand_accent": "Natur",
         "heading": "Hair fall doesn’t start on the scalp. It starts inside.",
-        "text": "Kesha Mula rebuilds the root with clean botanical nutrition — so strength returns where growth begins.",
+        "text": "Kesha Mula is clean root nutrition — warm, scientific, and built for consistency. Not another coating.",
         "button_label": "Shop Kesha Mula",
-        "secondary_label": "See how it works",
-        "min_height": 92
+        "secondary_label": "Read the founder note",
+        "min_height": 94
       }
     },
     "marquee": {
       "type": "trust-marquee",
       "blocks": {
-        "i1": { "type": "item", "settings": { "text": "Clinically Proven" } },
-        "i2": { "type": "item", "settings": { "text": "100% Natural Ingredients" } },
-        "i3": { "type": "item", "settings": { "text": "COD Available" } },
-        "i4": { "type": "item", "settings": { "text": "90-Day Money Back" } },
-        "i5": { "type": "item", "settings": { "text": "Free Express Shipping" } },
-        "i6": { "type": "item", "settings": { "text": "Trusted by 10,000+" } }
+        "i1": { "type": "item", "settings": { "text": "Clinically Proven Botanicals" } },
+        "i2": { "type": "item", "settings": { "text": "COD Across India" } },
+        "i3": { "type": "item", "settings": { "text": "90-Day Ease" } },
+        "i4": { "type": "item", "settings": { "text": "Free Express Shipping" } },
+        "i5": { "type": "item", "settings": { "text": "Trusted by 10,000+" } },
+        "i6": { "type": "item", "settings": { "text": "Founder-Led Ritual" } }
       },
       "block_order": ["i1", "i2", "i3", "i4", "i5", "i6"],
       "settings": { "enable": true }
     },
-    "problem": {
-      "type": "product-problem",
-      "blocks": {
-        "c1": { "type": "cause", "settings": { "title": "Chronic stress", "text": "Stress pushes follicles into shedding faster than they recover." } },
-        "c2": { "type": "cause", "settings": { "title": "Nutritional gaps", "text": "Missing botanicals weaken the root from within." } },
-        "c3": { "type": "cause", "settings": { "title": "Hormone changes", "text": "Postpartum and cycle shifts show up in the parting." } },
-        "c4": { "type": "cause", "settings": { "title": "Topical-only care", "text": "Oils coat the shaft — they can’t rebuild the root alone." } }
-      },
-      "block_order": ["c1", "c2", "c3", "c4"],
-      "settings": {}
+    "chapter_problem": {
+      "type": "editorial-story",
+      "settings": {
+        "layout": "left",
+        "soft_bg": false,
+        "eyebrow": "Chapter 01 · The root cause",
+        "heading": "Oils coat. Nutrition rebuilds.",
+        "text": "<p>If your brush keeps collecting more than it should, the answer is rarely another topical. Stress, nutrition gaps, and hormone shifts start inside the follicle long before they show in the parting.</p>",
+        "button_label": "See how Kesha Mula works"
+      }
     },
     "howto": {
       "type": "how-to-use",
       "blocks": {
-        "h1": { "type": "step", "settings": { "title": "Take one scoop", "text": "One measured scoop of Kesha Mula nightly." } },
-        "h2": { "type": "step", "settings": { "title": "Mix with warm water or milk", "text": "Chatpata, not bitter — easy every day." } },
-        "h3": { "type": "step", "settings": { "title": "Drink it down", "text": "No capsules. A simple nightly cue." } },
-        "h4": { "type": "step", "settings": { "title": "Stay consistent", "text": "Give the cycle 4–8 weeks." } }
+        "h1": { "type": "step", "settings": { "title": "One scoop", "text": "Measured. Nightly. No capsule theatre." } },
+        "h2": { "type": "step", "settings": { "title": "Warm water or milk", "text": "Chatpata, not bitter — easy to stay with." } },
+        "h3": { "type": "step", "settings": { "title": "Drink slowly", "text": "A calm cue before sleep." } },
+        "h4": { "type": "step", "settings": { "title": "Stay 60–90 days", "text": "Hair cycles reward consistency." } }
       },
       "block_order": ["h1", "h2", "h3", "h4"],
       "settings": {
-        "eyebrow": "How it works",
-        "heading": "A simple night habit. A more natural morning."
+        "eyebrow": "Chapter 02 · The ritual",
+        "heading": "Four quiet steps. One clearer morning.",
+        "text": "Premium doesn’t mean complicated. It means repeatable."
       }
     },
     "ingredients": {
       "type": "ingredients",
       "blocks": {
-        "i1": { "type": "ingredient", "settings": { "title": "Amla", "text": "Nature’s vitamin C for follicle vitality." } },
-        "i2": { "type": "ingredient", "settings": { "title": "Flaxseed", "text": "Omega-rich nourishment from within." } },
-        "i3": { "type": "ingredient", "settings": { "title": "Cumin", "text": "Supports digestion and nutrient uptake." } },
-        "i4": { "type": "ingredient", "settings": { "title": "Beetroot", "text": "Natural sweetness + plant nutrition." } },
-        "i5": { "type": "ingredient", "settings": { "title": "Clove", "text": "Warm botanical in a daily blend." } },
-        "i6": { "type": "ingredient", "settings": { "title": "14-herb blend", "text": "Full DeepRoot formula for long-term strength." } }
+        "i1": {
+          "type": "ingredient",
+          "settings": {
+            "tag": "Hero herb",
+            "title": "Amla",
+            "science": "Naturally rich in vitamin C and polyphenols that support antioxidant defense.",
+            "ayurveda": "A classic rasayana for scalp vitality and hair strength."
+          }
+        },
+        "i2": {
+          "type": "ingredient",
+          "settings": {
+            "tag": "Omega support",
+            "title": "Flaxseed",
+            "science": "Plant omegas that help nourish hair from within.",
+            "ayurveda": "Daily internal nourishment for balance."
+          }
+        },
+        "i3": {
+          "type": "ingredient",
+          "settings": {
+            "tag": "Digestive ally",
+            "title": "Cumin",
+            "science": "Supports digestion and nutrient uptake.",
+            "ayurveda": "Supports agni so nutrition can be absorbed."
+          }
+        },
+        "i4": {
+          "type": "ingredient",
+          "settings": {
+            "tag": "Mineral tone",
+            "title": "Beetroot",
+            "science": "Natural sweetness and iron-supportive plant nutrition.",
+            "ayurveda": "Keeps the ritual easy — not bitter."
+          }
+        }
       },
-      "block_order": ["i1", "i2", "i3", "i4", "i5", "i6"],
-      "settings": {}
+      "block_order": ["i1", "i2", "i3", "i4"],
+      "settings": {
+        "eyebrow": "Chapter 03 · The blend",
+        "heading": "Herbs with a reason."
+      }
     },
     "benefits": {
       "type": "product-benefits",
       "blocks": {
-        "b1": { "type": "benefit", "settings": { "title": "Less hair fall", "text": "Calmer shedding from within." } },
+        "b1": { "type": "benefit", "settings": { "title": "Less fall", "text": "A calmer shedding cycle from within." } },
         "b2": { "type": "benefit", "settings": { "title": "Stronger roots", "text": "Botanical nutrition for the follicle." } },
-        "b3": { "type": "benefit", "settings": { "title": "Healthy scalp feel", "text": "Support the environment growth needs." } },
-        "b4": { "type": "benefit", "settings": { "title": "Clean Ayurvedic", "text": "No preservatives. Food-grade herbs." } }
+        "b3": { "type": "benefit", "settings": { "title": "Healthier scalp feel", "text": "Support the environment growth needs." } },
+        "b4": { "type": "benefit", "settings": { "title": "Clean ritual", "text": "No preservatives. Food-grade herbs." } }
       },
       "block_order": ["b1", "b2", "b3", "b4"],
       "settings": {
-        "eyebrow": "Benefits",
+        "eyebrow": "What changes",
         "heading": "Built for roots — not just the shaft."
       }
     },
     "compare": {
       "type": "brand-comparison",
       "blocks": {
-        "r1": { "type": "row", "settings": { "feature": "Targets the real reason hair falls", "other_1": "no", "other_2": "partial", "ours": "yes" } },
-        "r2": { "type": "row", "settings": { "feature": "Visible results in 4 weeks", "other_1": "no", "other_2": "partial", "ours": "yes" } },
-        "r3": { "type": "row", "settings": { "feature": "Hormone & stress-related support", "other_1": "no", "other_2": "no", "ours": "yes" } },
-        "r4": { "type": "row", "settings": { "feature": "No artificial sugars / preservatives", "other_1": "partial", "other_2": "no", "ours": "yes" } }
+        "r1": { "type": "row", "settings": { "feature": "Targets root cause of fall", "other_1": "no", "other_2": "partial", "ours": "yes" } },
+        "r2": { "type": "row", "settings": { "feature": "Visible shift in 3–4 weeks", "other_1": "no", "other_2": "partial", "ours": "yes" } },
+        "r3": { "type": "row", "settings": { "feature": "Hormone & stress-aware support", "other_1": "no", "other_2": "no", "ours": "yes" } },
+        "r4": { "type": "row", "settings": { "feature": "No artificial sugars / fillers", "other_1": "partial", "other_2": "no", "ours": "yes" } },
+        "r5": { "type": "row", "settings": { "feature": "Food-grade Ayurvedic botanicals", "other_1": "partial", "other_2": "no", "ours": "yes" } }
       },
-      "block_order": ["r1", "r2", "r3", "r4"],
-      "settings": {}
+      "block_order": ["r1", "r2", "r3", "r4", "r5"],
+      "settings": {
+        "eyebrow": "Chapter 04 · The difference",
+        "heading": "Why this isn’t another biotin gummy.",
+        "text": "Compare the ritual — not the marketing.",
+        "col_other_1": "Hair oils",
+        "col_other_2": "Biotin gummies",
+        "col_ours": "Kesha Mula"
+      }
     },
     "timeline": {
       "type": "results-timeline",
       "blocks": {
-        "t1": { "type": "step", "settings": { "week": "30 days", "title": "Less shedding", "text": "Most people notice less hair on pillow and floor." } },
-        "t2": { "type": "step", "settings": { "week": "60 days", "title": "Stronger feel", "text": "Breakage reduces. Texture improves." } },
-        "t3": { "type": "step", "settings": { "week": "90 days", "title": "Visible density", "text": "Parting and crown often look fuller." } },
-        "t4": { "type": "step", "settings": { "week": "Ongoing", "title": "Lock it in", "text": "Stay consistent — hair needs sustained nourishment." } }
+        "t1": { "type": "step", "settings": { "week": "30 days", "title": "Less shedding", "text": "Pillow and brush usually calm first." } },
+        "t2": { "type": "step", "settings": { "week": "60 days", "title": "Stronger feel", "text": "Breakage softens. Texture improves." } },
+        "t3": { "type": "step", "settings": { "week": "90 days", "title": "Visible density", "text": "Parting often looks fuller." } },
+        "t4": { "type": "step", "settings": { "week": "Ongoing", "title": "Lock it in", "text": "Hair needs sustained nourishment." } }
       },
       "block_order": ["t1", "t2", "t3", "t4"],
       "settings": {
-        "eyebrow": "30 / 60 / 90 days",
-        "heading": "What consistency actually looks like"
+        "eyebrow": "Chapter 05 · Time",
+        "heading": "30. 60. 90. Consistency is the product."
       }
     },
     "founder": {
       "type": "founder-story",
-      "settings": {}
+      "settings": {
+        "eyebrow": "Chapter 06 · Founder",
+        "heading": "We didn’t build another oil. We built a root ritual.",
+        "letter": "If your brush keeps collecting more than it should, the answer is rarely another coating. Hair fall begins inside — in stress, nutrition gaps, and a cycle that needs gentle consistency. Kesha Mula is our promise to treat that truth with clean botanicals, not empty claims.",
+        "signature": "With roots,",
+        "founder_name": "Team JustNatur",
+        "founder_role": "Founders",
+        "button_label": "Start with Kesha Mula"
+      }
     },
     "videos": {
       "type": "video-carousel",
       "blocks": {
-        "v1": { "type": "video", "settings": { "title": "How to use", "caption": "Nightly scoop ritual" } },
-        "v2": { "type": "video", "settings": { "title": "Customer story", "caption": "Less fall after 4 weeks" } },
-        "v3": { "type": "video", "settings": { "title": "Founder note", "caption": "Why root nutrition" } }
+        "v1": { "type": "video", "settings": { "title": "How to use", "caption": "The nightly scoop" } },
+        "v2": { "type": "video", "settings": { "title": "Customer story", "caption": "Less fall, real timeline" } },
+        "v3": { "type": "video", "settings": { "title": "Founder note", "caption": "Why roots first" } }
       },
       "block_order": ["v1", "v2", "v3"],
-      "settings": {}
+      "settings": {
+        "eyebrow": "Watch",
+        "heading": "Stories you can see."
+      }
     },
     "featured": {
       "type": "featured-collection",
       "settings": {
-        "eyebrow": "Shop the ritual",
-        "heading": "Start with Kesha Mula",
-        "text": "Clean nutrition for stronger roots.",
+        "eyebrow": "Shop",
+        "heading": "Begin the root ritual",
+        "text": "Kesha Mula and the inside-out routine.",
         "products_to_show": 3,
         "button_label": "View all"
       }
@@ -135,9 +188,12 @@
           "settings": {
             "after_label": "After 8 Weeks",
             "timeline": "8 weeks",
-            "title": "Less hair fall while washing",
+            "title": "Less hair while washing",
             "quote": "After using Kesha Mula consistently for 3–4 weeks, the hair fall reduced a lot.",
-            "results": "Hair fall reduced | Stronger feel",
+            "age": "Age 31",
+            "concern": "Wash-day fall",
+            "duration": "Used 8 weeks",
+            "results": "Less fall | Reordered",
             "author": "Anusha R.",
             "verified": true
           }
@@ -147,9 +203,12 @@
           "settings": {
             "after_label": "After 8 Weeks",
             "timeline": "8 weeks",
-            "title": "Post-stress fall settling",
-            "quote": "Kesha Mula felt gentle and natural. My hair fall has reduced slowly.",
-            "results": "No side effects | Better energy",
+            "title": "Postpartum shedding eased",
+            "quote": "It felt gentle and natural. My hair fall reduced slowly without side effects.",
+            "age": "Age 28",
+            "concern": "Postpartum",
+            "duration": "Used 60 days",
+            "results": "Gentler fall | Better energy",
             "author": "Swathi M.",
             "verified": true
           }
@@ -159,16 +218,22 @@
           "settings": {
             "after_label": "After 12 Weeks",
             "timeline": "12 weeks",
-            "title": "Looks less thin than before",
+            "title": "Front hair looks fuller",
             "quote": "After three months, my hair feels thicker and more manageable.",
-            "results": "Less thinning | Thicker feel",
+            "age": "Age 36",
+            "concern": "Thinning at front",
+            "duration": "Used 90 days",
+            "results": "Denser feel | Continuing",
             "author": "Kavitha S.",
             "verified": true
           }
         }
       },
       "block_order": ["ba1", "ba2", "ba3"],
-      "settings": {}
+      "settings": {
+        "eyebrow": "Proof",
+        "heading": "Real roots. Real timelines."
+      }
     },
     "faq": {
       "type": "faq",
@@ -184,19 +249,22 @@
           "type": "faq",
           "settings": {
             "question": "Is COD available?",
-            "answer": "Yes — COD is available across India on eligible orders, along with UPI, cards, and netbanking."
+            "answer": "Yes — COD across India on eligible orders, plus UPI, cards, and netbanking."
           }
         },
         "f3": {
           "type": "faq",
           "settings": {
-            "question": "How is this different from oils?",
-            "answer": "Oils coat the shaft. Kesha Mula nourishes the root from within — the only way to address fall at the source."
+            "question": "How is this different from oils or gummies?",
+            "answer": "Oils coat the shaft. Many gummies are sugar-led. Kesha Mula is food-grade root nutrition for the follicle."
           }
         }
       },
       "block_order": ["f1", "f2", "f3"],
-      "settings": {}
+      "settings": {
+        "eyebrow": "Questions",
+        "heading": "Clear answers before you buy."
+      }
     },
     "instagram": {
       "type": "instagram",
@@ -207,14 +275,17 @@
         "p4": { "type": "image" }
       },
       "block_order": ["p1", "p2", "p3", "p4"],
-      "settings": {}
+      "settings": {
+        "eyebrow": "Community",
+        "heading": "Root rituals in the wild"
+      }
     },
     "newsletter": {
       "type": "newsletter",
       "settings": {
         "eyebrow": "Stay close",
         "heading": "Join the root ritual",
-        "text": "Notes on internal hair nutrition — once a week.",
+        "text": "One thoughtful note a week. No noise.",
         "button_label": "Subscribe"
       }
     }
@@ -222,7 +293,7 @@
   "order": [
     "hero",
     "marquee",
-    "problem",
+    "chapter_problem",
     "howto",
     "ingredients",
     "benefits",

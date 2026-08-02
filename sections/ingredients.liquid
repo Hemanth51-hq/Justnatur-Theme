@@ -18,9 +18,20 @@
               {{ block.settings.title | slice: 0 }}
             {%- endif -%}
           </div>
-          <div>
+          <div class="ingredient__meta">
+            <div class="ingredient__tag">{{ block.settings.tag | default: 'Botanical' }}</div>
             <h3>{{ block.settings.title }}</h3>
-            <p>{{ block.settings.text }}</p>
+            <div class="ingredient__dual">
+              {%- if block.settings.science != blank -%}
+                <p><strong>Science:</strong> {{ block.settings.science }}</p>
+              {%- endif -%}
+              {%- if block.settings.ayurveda != blank -%}
+                <p><strong>Ayurveda:</strong> {{ block.settings.ayurveda }}</p>
+              {%- endif -%}
+              {%- if block.settings.science == blank and block.settings.ayurveda == blank -%}
+                <p>{{ block.settings.text }}</p>
+              {%- endif -%}
+            </div>
           </div>
         </article>
       {%- endfor -%}
@@ -41,30 +52,24 @@
 {
   "name": "Ingredients",
   "settings": [
-    {
-      "type": "text",
-      "id": "eyebrow",
-      "label": "Eyebrow",
-      "default": "Key ingredients"
-    },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Inside the blend" },
     {
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Each seed, herb, and leaf strengthens hair from root to tip"
+      "default": "Herbs with a reason. Not a filler list."
     },
     {
       "type": "textarea",
       "id": "text",
       "label": "Text",
-      "default": "DeepRoot Hair Strength Mix is carefully chosen to nourish the follicle — naturally, with no preservatives or artificial sugars."
+      "default": "Each botanical in Kesha Mula was chosen for both modern nutrition and classical Ayurvedic use."
     },
     {
       "type": "text",
       "id": "chips",
       "label": "Trust chips",
-      "default": "Globally sourced | Clinically proven ingredients | Hypoallergenic | 100% pesticide free | No artificial sugars | 100% vegan",
-      "info": "Separate with |"
+      "default": "Food-grade | Pesticide free | No preservatives | 100% vegan"
     }
   ],
   "blocks": [
@@ -73,8 +78,11 @@
       "name": "Ingredient",
       "settings": [
         { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "tag", "label": "Tag", "default": "Hero herb" },
         { "type": "text", "id": "title", "label": "Title", "default": "Amla" },
-        { "type": "textarea", "id": "text", "label": "Text", "default": "Vitamin C–rich fruit traditionally used to support scalp vitality and hair strength." }
+        { "type": "textarea", "id": "science", "label": "Science", "default": "Naturally rich in vitamin C and polyphenols that support antioxidant defense." },
+        { "type": "textarea", "id": "ayurveda", "label": "Ayurveda", "default": "Classically used to support scalp vitality and hair strength from within." },
+        { "type": "textarea", "id": "text", "label": "Fallback text", "default": "Supports follicle vitality." }
       ]
     }
   ],
@@ -82,12 +90,42 @@
     {
       "name": "Ingredients",
       "blocks": [
-        { "type": "ingredient", "settings": { "title": "Amla", "text": "Nature’s vitamin C — supports follicle vitality and antioxidant defense." } },
-        { "type": "ingredient", "settings": { "title": "Flaxseed", "text": "Omega-rich seed that helps nourish hair from the inside out." } },
-        { "type": "ingredient", "settings": { "title": "Cumin", "text": "Food-grade spice traditionally used to support digestion and nutrient uptake." } },
-        { "type": "ingredient", "settings": { "title": "Beetroot", "text": "Adds natural sweetness and iron-supportive plant nutrition." } },
-        { "type": "ingredient", "settings": { "title": "Clove", "text": "Warm botanical note in a balanced, daily-drinkable blend." } },
-        { "type": "ingredient", "settings": { "title": "14-herb blend", "text": "A full DeepRoot formula built for long-term root strength — not a one-note gummy." } }
+        {
+          "type": "ingredient",
+          "settings": {
+            "tag": "Hero herb",
+            "title": "Amla",
+            "science": "Naturally rich in vitamin C and polyphenols that support antioxidant defense.",
+            "ayurveda": "A classic rasayana for scalp vitality and hair strength."
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "tag": "Omega support",
+            "title": "Flaxseed",
+            "science": "Provides plant omegas that help nourish hair from the inside out.",
+            "ayurveda": "Used to support internal balance and daily nourishment."
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "tag": "Digestive ally",
+            "title": "Cumin",
+            "science": "Food-grade spice traditionally linked with digestion and nutrient uptake.",
+            "ayurveda": "Supports agni — so nutrition can actually be absorbed."
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "tag": "Mineral tone",
+            "title": "Beetroot",
+            "science": "Adds natural sweetness and iron-supportive plant nutrition.",
+            "ayurveda": "Balances the blend so the ritual stays easy, not bitter."
+          }
+        }
       ]
     }
   ]
